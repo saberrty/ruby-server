@@ -4,17 +4,17 @@ class UsersController < ApplicationController
     username = params['username']
     password = params['password']
     if username && password
-      User.create({ password: password, username: username })
-      render json: { users: User.find_by_username(username) }
+      user = User.create({ password: password, username: username })
+      render json: { user: user }
     else
-      render json: { mother: "fucker" }
+      render json: { mother: "failed" }
     end
   end
 
   def delete_user
-    username = params['username']
-    if username
-      User.find_by_username(username).delete
+    id = params['id']
+    if id
+      User.find_by_id(id).delete
       render json: { delete: "success" }
     else
       render json: { delete: "failed" }
