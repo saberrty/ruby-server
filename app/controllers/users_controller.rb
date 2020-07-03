@@ -18,12 +18,13 @@ class UsersController < ApplicationController
   end
 
   def delete_user
-    id = params['id']
-    if id
-      user = User.find_by_id(id)
+    username = params['username']
+    if username
+      user = User.find_by_username(username)
       if user
         user.delete
-        render json: { delete: "success" }
+        users_list
+        return
       end
       render json: { message: "no user" }, status: "404"
     else
@@ -37,10 +38,12 @@ class UsersController < ApplicationController
     if username && password
       if user = User.find_by_username(username)
         if user.password == password
-          render json: { status: true }
+          render json: { status: "success", user: user }
+        else
+          render json: { reason: "auth error" }, status: "503"
         end
       else
-        render json: { reason: "no such user" }, status: "503"
+        render json: { reason: "user not found" }, status: "503"
       end
     else
       render json: { reason: "auth error" }, status: "503"
