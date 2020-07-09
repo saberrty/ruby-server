@@ -37,7 +37,10 @@ class UsersController < ApplicationController
     password = params['password']
     if username && password
       if user = User.find_by_username(username)
-        if user.password == password
+        if Digest::SHA1.hexdigest(user.password) == password
+          user.authed = true
+          user.session_id = user.create_session
+          user.save
           render json: { status: "success", user: user }
         else
           render json: { reason: "auth error" }, status: "503"
@@ -52,6 +55,16 @@ class UsersController < ApplicationController
 
   def users_list
     render json: { users: User.all }
+  end
+
+  def auth_session
+    session = params["session"]
+    user = User.find_by_session_id(session)
+    if user && user.authed
+      render json: { status: "success", user: user }
+    else
+      render json: { status: "session not found" }, status: "404"
+    end
   end
 
 end

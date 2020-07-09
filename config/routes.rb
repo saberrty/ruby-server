@@ -5,6 +5,7 @@ Rails.application.routes.draw do
       get 'users_list'
       post 'delete_user'
       post 'login'
+      post 'auth_session'
     end
   end
 end
