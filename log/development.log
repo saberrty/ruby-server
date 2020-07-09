@@ -2624,3 +2624,300 @@ Processing by UsersController#users_list as HTML
 Completed 200 OK in 3ms (Views: 1.8ms | ActiveRecord: 0.7ms)
 
 
+Started POST "/users/delete_user" for 127.0.0.1 at 2020-07-09 13:28:26 +0800
+Processing by UsersController#delete_user as HTML
+  Parameters: {"username"=>"123", "user"=>{"username"=>"123"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`username` = '123' LIMIT 1[0m
+  ↳ app/controllers/users_controller.rb:23
+  [1m[36mUser Destroy (1.7ms)[0m  [1m[31mDELETE FROM `users` WHERE `users`.`id` = 30[0m
+  ↳ app/controllers/users_controller.rb:25
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users`[0m
+  ↳ app/controllers/users_controller.rb:57
+Completed 200 OK in 4ms (Views: 0.6ms | ActiveRecord: 2.5ms)
+
+
+Started POST "/users/auth_session" for 127.0.0.1 at 2020-07-09 13:28:29 +0800
+Processing by UsersController#auth_session as HTML
+  Parameters: {"session"=>"4ecf07d1696f63430a4d0d4df005e3a8", "user"=>{}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`session_id` = '4ecf07d1696f63430a4d0d4df005e3a8' LIMIT 1[0m
+  ↳ app/controllers/users_controller.rb:62
+Completed 404 Not Found in 2ms (Views: 0.2ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/users/auth_session" for 127.0.0.1 at 2020-07-09 13:29:24 +0800
+Processing by UsersController#auth_session as HTML
+  Parameters: {"session"=>"4ecf07d1696f63430a4d0d4df005e3a8", "user"=>{}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`session_id` = '4ecf07d1696f63430a4d0d4df005e3a8' LIMIT 1[0m
+  ↳ app/controllers/users_controller.rb:62
+Completed 404 Not Found in 2ms (Views: 0.2ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/users/auth_session" for 127.0.0.1 at 2020-07-09 13:29:52 +0800
+Processing by UsersController#auth_session as HTML
+  Parameters: {"session"=>"4ecf07d1696f63430a4d0d4df005e3a8", "user"=>{}}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`session_id` = '4ecf07d1696f63430a4d0d4df005e3a8' LIMIT 1[0m
+  ↳ app/controllers/users_controller.rb:62
+Completed 404 Not Found in 2ms (Views: 0.2ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/users/auth_session" for 127.0.0.1 at 2020-07-09 17:00:15 +0800
+  [1m[35m (0.5ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ /usr/local/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+Processing by UsersController#auth_session as HTML
+  Parameters: {"session"=>"4ecf07d1696f63430a4d0d4df005e3a8", "user"=>{}}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`session_id` = '4ecf07d1696f63430a4d0d4df005e3a8' LIMIT 1[0m
+  ↳ app/controllers/users_controller.rb:62
+Completed 404 Not Found in 2ms (Views: 0.3ms | ActiveRecord: 1.1ms)
+
+
+Started POST "/users/auth_session" for 127.0.0.1 at 2020-07-09 17:01:07 +0800
+Processing by UsersController#auth_session as HTML
+  Parameters: {"session"=>"4ecf07d1696f63430a4d0d4df005e3a8", "user"=>{}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`session_id` = '4ecf07d1696f63430a4d0d4df005e3a8' LIMIT 1[0m
+  ↳ app/controllers/users_controller.rb:62
+Completed 404 Not Found in 2ms (Views: 0.1ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/users/auth_session" for 127.0.0.1 at 2020-07-09 17:01:41 +0800
+Processing by UsersController#auth_session as HTML
+  Parameters: {"session"=>"4ecf07d1696f63430a4d0d4df005e3a8", "user"=>{}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`session_id` = '4ecf07d1696f63430a4d0d4df005e3a8' LIMIT 1[0m
+  ↳ app/controllers/users_controller.rb:62
+Completed 404 Not Found in 2ms (Views: 0.1ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/users/auth_session" for 127.0.0.1 at 2020-07-09 17:02:47 +0800
+Processing by UsersController#auth_session as HTML
+  Parameters: {"session"=>"4ecf07d1696f63430a4d0d4df005e3a8", "user"=>{}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`session_id` = '4ecf07d1696f63430a4d0d4df005e3a8' LIMIT 1[0m
+  ↳ app/controllers/users_controller.rb:66
+Completed 404 Not Found in 2ms (Views: 0.2ms | ActiveRecord: 12.0ms)
+
+
+Started POST "/users/create_user" for 127.0.0.1 at 2020-07-09 17:05:31 +0800
+Processing by UsersController#create_user as HTML
+  Parameters: {"username"=>"123", "password"=>"[FILTERED]", "user"=>{"username"=>"123", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`username` = '123' LIMIT 1[0m
+  ↳ app/controllers/users_controller.rb:7
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:13
+  [1m[36mUser Create (0.8ms)[0m  [1m[32mINSERT INTO `users` (`created_at`, `updated_at`, `username`, `password`) VALUES ('2020-07-09 09:05:31', '2020-07-09 09:05:31', '123', '123')[0m
+  ↳ app/controllers/users_controller.rb:13
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:13
+Completed 200 OK in 39ms (Views: 0.4ms | ActiveRecord: 23.6ms)
+
+
+Started GET "/users/users_list" for 127.0.0.1 at 2020-07-09 17:05:31 +0800
+Processing by UsersController#users_list as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT `users`.* FROM `users`[0m
+  ↳ app/controllers/users_controller.rb:57
+Completed 200 OK in 3ms (Views: 1.3ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/users/logout" for 127.0.0.1 at 2020-07-09 17:05:32 +0800
+Processing by UsersController#logout as HTML
+  Parameters: {"userId"=>31, "user"=>{}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 31 LIMIT 1[0m
+  ↳ app/controllers/users_controller.rb:62
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:65
+  [1m[36mUser Update (0.4ms)[0m  [1m[33mUPDATE `users` SET `session_id` = '', `updated_at` = '2020-07-09 09:05:32' WHERE `users`.`id` = 31[0m
+  ↳ app/controllers/users_controller.rb:65
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:65
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 1.7ms)
+
+
+  
+ActionView::MissingTemplate (Missing template users/logout, application/logout with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/Users/saber/MyProjects/ruby-server/app/views"
+):
+  
+app/controllers/users_controller.rb:66:in `logout'
+Started POST "/users/logout" for 127.0.0.1 at 2020-07-09 17:06:37 +0800
+Processing by UsersController#logout as HTML
+  Parameters: {"userId"=>31, "user"=>{}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 31 LIMIT 1[0m
+  ↳ app/controllers/users_controller.rb:62
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:65
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:65
+Completed 200 OK in 26ms (Views: 0.2ms | ActiveRecord: 17.9ms)
+
+
+Started POST "/users/auth_session" for 127.0.0.1 at 2020-07-09 17:06:41 +0800
+Processing by UsersController#auth_session as HTML
+  Parameters: {"session"=>"4ecf07d1696f63430a4d0d4df005e3a8", "user"=>{}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`session_id` = '4ecf07d1696f63430a4d0d4df005e3a8' LIMIT 1[0m
+  ↳ app/controllers/users_controller.rb:74
+Completed 404 Not Found in 2ms (Views: 0.2ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/users/auth_session" for 127.0.0.1 at 2020-07-09 17:06:44 +0800
+Processing by UsersController#auth_session as HTML
+  Parameters: {"session"=>"4ecf07d1696f63430a4d0d4df005e3a8", "user"=>{}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`session_id` = '4ecf07d1696f63430a4d0d4df005e3a8' LIMIT 1[0m
+  ↳ app/controllers/users_controller.rb:74
+Completed 404 Not Found in 2ms (Views: 0.2ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/users/auth_session" for 127.0.0.1 at 2020-07-09 17:07:28 +0800
+Processing by UsersController#auth_session as HTML
+  Parameters: {"session"=>"4ecf07d1696f63430a4d0d4df005e3a8", "user"=>{}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`session_id` = '4ecf07d1696f63430a4d0d4df005e3a8' LIMIT 1[0m
+  ↳ app/controllers/users_controller.rb:74
+Completed 404 Not Found in 2ms (Views: 0.2ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/users/login" for 127.0.0.1 at 2020-07-09 17:07:40 +0800
+Processing by UsersController#login as HTML
+  Parameters: {"username"=>"123", "password"=>"[FILTERED]", "user"=>{"username"=>"123", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`username` = '123' LIMIT 1[0m
+  ↳ app/controllers/users_controller.rb:39
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:43
+  [1m[36mUser Update (0.5ms)[0m  [1m[33mUPDATE `users` SET `authed` = TRUE, `session_id` = '83e5c945ce135e2d752f8f7f28e65dbb', `updated_at` = '2020-07-09 09:07:40' WHERE `users`.`id` = 31[0m
+  ↳ app/controllers/users_controller.rb:43
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:43
+Completed 200 OK in 5ms (Views: 0.4ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/users/users_list" for 127.0.0.1 at 2020-07-09 17:07:40 +0800
+Processing by UsersController#users_list as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users`[0m
+  ↳ app/controllers/users_controller.rb:57
+Completed 200 OK in 2ms (Views: 0.9ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/users/auth_session" for 127.0.0.1 at 2020-07-09 17:07:42 +0800
+Processing by UsersController#auth_session as HTML
+  Parameters: {"session"=>"83e5c945ce135e2d752f8f7f28e65dbb", "user"=>{}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`session_id` = '83e5c945ce135e2d752f8f7f28e65dbb' LIMIT 1[0m
+  ↳ app/controllers/users_controller.rb:74
+Completed 200 OK in 2ms (Views: 0.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/users/users_list" for 127.0.0.1 at 2020-07-09 17:07:42 +0800
+Processing by UsersController#users_list as HTML
+  [1m[36mUser Load (4.5ms)[0m  [1m[34mSELECT `users`.* FROM `users`[0m
+  ↳ app/controllers/users_controller.rb:57
+Completed 200 OK in 7ms (Views: 1.8ms | ActiveRecord: 4.5ms)
+
+
+Started POST "/users/logout" for 127.0.0.1 at 2020-07-09 17:07:44 +0800
+Processing by UsersController#logout as HTML
+  Parameters: {"userId"=>31, "user"=>{}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 31 LIMIT 1[0m
+  ↳ app/controllers/users_controller.rb:62
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:65
+  [1m[36mUser Update (0.4ms)[0m  [1m[33mUPDATE `users` SET `authed` = FALSE, `session_id` = '', `updated_at` = '2020-07-09 09:07:44' WHERE `users`.`id` = 31[0m
+  ↳ app/controllers/users_controller.rb:65
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:65
+Completed 200 OK in 6ms (Views: 0.1ms | ActiveRecord: 1.7ms)
+
+
+Started POST "/users/login" for 127.0.0.1 at 2020-07-09 17:09:06 +0800
+Processing by UsersController#login as HTML
+  Parameters: {"username"=>"123", "password"=>"[FILTERED]", "user"=>{"username"=>"123", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`username` = '123' LIMIT 1[0m
+  ↳ app/controllers/users_controller.rb:39
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:43
+  [1m[36mUser Update (0.4ms)[0m  [1m[33mUPDATE `users` SET `authed` = TRUE, `session_id` = 'e2543b266212a2240ffb90ba8d5d309c', `updated_at` = '2020-07-09 09:09:06' WHERE `users`.`id` = 31[0m
+  ↳ app/controllers/users_controller.rb:43
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:43
+Completed 200 OK in 4ms (Views: 0.3ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/users/users_list" for 127.0.0.1 at 2020-07-09 17:09:06 +0800
+Processing by UsersController#users_list as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users`[0m
+  ↳ app/controllers/users_controller.rb:57
+Completed 200 OK in 2ms (Views: 1.2ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/users/auth_session" for 127.0.0.1 at 2020-07-09 17:09:08 +0800
+Processing by UsersController#auth_session as HTML
+  Parameters: {"session"=>"e2543b266212a2240ffb90ba8d5d309c", "user"=>{}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`session_id` = 'e2543b266212a2240ffb90ba8d5d309c' LIMIT 1[0m
+  ↳ app/controllers/users_controller.rb:74
+Completed 200 OK in 2ms (Views: 0.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users/users_list" for 127.0.0.1 at 2020-07-09 17:09:08 +0800
+Processing by UsersController#users_list as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT `users`.* FROM `users`[0m
+  ↳ app/controllers/users_controller.rb:57
+Completed 200 OK in 2ms (Views: 1.3ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/users/logout" for 127.0.0.1 at 2020-07-09 17:09:10 +0800
+Processing by UsersController#logout as HTML
+  Parameters: {"userId"=>31, "user"=>{}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 31 LIMIT 1[0m
+  ↳ app/controllers/users_controller.rb:62
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:65
+  [1m[36mUser Update (0.4ms)[0m  [1m[33mUPDATE `users` SET `authed` = FALSE, `session_id` = '', `updated_at` = '2020-07-09 09:09:10' WHERE `users`.`id` = 31[0m
+  ↳ app/controllers/users_controller.rb:65
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:65
+Completed 200 OK in 4ms (Views: 0.1ms | ActiveRecord: 1.3ms)
+
+
+Started POST "/users/login" for 127.0.0.1 at 2020-07-09 17:09:15 +0800
+Processing by UsersController#login as HTML
+  Parameters: {"username"=>"123", "password"=>"[FILTERED]", "user"=>{"username"=>"123", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`username` = '123' LIMIT 1[0m
+  ↳ app/controllers/users_controller.rb:39
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:43
+  [1m[36mUser Update (1.9ms)[0m  [1m[33mUPDATE `users` SET `authed` = TRUE, `session_id` = '36e5259b4a52336852a7e44184c57610', `updated_at` = '2020-07-09 09:09:15' WHERE `users`.`id` = 31[0m
+  ↳ app/controllers/users_controller.rb:43
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:43
+Completed 200 OK in 6ms (Views: 0.3ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/users/users_list" for 127.0.0.1 at 2020-07-09 17:09:15 +0800
+Processing by UsersController#users_list as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users`[0m
+  ↳ app/controllers/users_controller.rb:57
+Completed 200 OK in 2ms (Views: 1.3ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/users/auth_session" for 127.0.0.1 at 2020-07-09 17:09:20 +0800
+Processing by UsersController#auth_session as HTML
+  Parameters: {"session"=>"36e5259b4a52336852a7e44184c57610", "user"=>{}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`session_id` = '36e5259b4a52336852a7e44184c57610' LIMIT 1[0m
+  ↳ app/controllers/users_controller.rb:74
+Completed 200 OK in 2ms (Views: 0.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users/users_list" for 127.0.0.1 at 2020-07-09 17:09:20 +0800
+Processing by UsersController#users_list as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT `users`.* FROM `users`[0m
+  ↳ app/controllers/users_controller.rb:57
+Completed 200 OK in 3ms (Views: 1.6ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/users/logout" for 127.0.0.1 at 2020-07-09 17:09:22 +0800
+Processing by UsersController#logout as HTML
+  Parameters: {"userId"=>31, "user"=>{}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 31 LIMIT 1[0m
+  ↳ app/controllers/users_controller.rb:62
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:65
+  [1m[36mUser Update (0.5ms)[0m  [1m[33mUPDATE `users` SET `authed` = FALSE, `session_id` = '', `updated_at` = '2020-07-09 09:09:22' WHERE `users`.`id` = 31[0m
+  ↳ app/controllers/users_controller.rb:65
+  [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:65
+Completed 200 OK in 6ms (Views: 0.1ms | ActiveRecord: 2.7ms)
+
+

@@ -57,6 +57,18 @@ class UsersController < ApplicationController
     render json: { users: User.all }
   end
 
+  def logout
+    user_id = params["userId"]
+    if user = User.find_by_id(user_id)
+      user.authed = false
+      user.session_id = ""
+      user.save
+      render json: { status: "success" }
+      return
+    end
+    render json: { status: "Failed" }, status: "400"
+  end
+
   def auth_session
     session = params["session"]
     user = User.find_by_session_id(session)
