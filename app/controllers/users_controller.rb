@@ -18,9 +18,9 @@ class UsersController < ApplicationController
   end
 
   def delete_user
-    username = params['username']
-    if username
-      user = User.find_by_username(username)
+    id = params['id']
+    if id
+      user = User.find_by_id(id)
       if user
         user.delete
         users_list
@@ -61,7 +61,7 @@ class UsersController < ApplicationController
     user_id = params["userId"]
     if user = User.find_by_id(user_id)
       user.authed = false
-      user.session_id = ""
+      user.session_id = nil
       user.save
       render json: { status: "success" }
       return

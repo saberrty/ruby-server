@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_07_03_075605) do
+ActiveRecord::Schema.define(version: 2020_07_20_073539) do
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.datetime "created_at", null: false
@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(version: 2020_07_03_075605) do
     t.string "password"
     t.string "session_id"
     t.boolean "authed", default: false
+    t.boolean "admin", default: false
   end
 
 end
