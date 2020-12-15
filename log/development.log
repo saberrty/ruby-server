@@ -3243,3 +3243,1786 @@ Processing by UsersController#logout as HTML
 Completed 200 OK in 5ms (Views: 0.2ms | ActiveRecord: 2.0ms)
 
 
+Started POST "/users/login" for 127.0.0.1 at 2020-07-20 15:46:52 +0800
+  [1m[35m (1.5ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ /usr/local/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+Processing by UsersController#login as HTML
+  Parameters: {"username"=>"123", "password"=>"[FILTERED]", "user"=>{"username"=>"123", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`username` = '123' LIMIT 1[0m
+  ↳ app/controllers/users_controller.rb:39
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:43
+  [1m[36mUser Update (1.6ms)[0m  [1m[33mUPDATE `users` SET `authed` = TRUE, `session_id` = '1cba7a128d8229439b813aede36f0e9e', `updated_at` = '2020-07-20 07:46:52' WHERE `users`.`id` = 31[0m
+  ↳ app/controllers/users_controller.rb:43
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:43
+Completed 200 OK in 10ms (Views: 0.8ms | ActiveRecord: 3.5ms)
+
+
+Started GET "/users/users_list" for 127.0.0.1 at 2020-07-20 15:46:52 +0800
+Processing by UsersController#users_list as HTML
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT `users`.* FROM `users`[0m
+  ↳ app/controllers/users_controller.rb:57
+Completed 200 OK in 3ms (Views: 1.5ms | ActiveRecord: 1.1ms)
+
+
+Started POST "/users/logout" for 127.0.0.1 at 2020-07-20 15:48:11 +0800
+Processing by UsersController#logout as HTML
+  Parameters: {"userId"=>31, "user"=>{}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 31 LIMIT 1[0m
+  ↳ app/controllers/users_controller.rb:62
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:65
+  [1m[36mUser Update (2.5ms)[0m  [1m[33mUPDATE `users` SET `authed` = FALSE, `session_id` = NULL, `updated_at` = '2020-07-20 07:48:11' WHERE `users`.`id` = 31[0m
+  ↳ app/controllers/users_controller.rb:65
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:65
+Completed 200 OK in 7ms (Views: 0.2ms | ActiveRecord: 4.0ms)
+
+
+Started POST "/users/login" for 127.0.0.1 at 2020-07-20 15:48:14 +0800
+Processing by UsersController#login as HTML
+  Parameters: {"username"=>"123", "password"=>"[FILTERED]", "user"=>{"username"=>"123", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`username` = '123' LIMIT 1[0m
+  ↳ app/controllers/users_controller.rb:39
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:43
+  [1m[36mUser Update (0.8ms)[0m  [1m[33mUPDATE `users` SET `authed` = TRUE, `session_id` = '3b8dd78f6deb6cd8facecbe52956127d', `updated_at` = '2020-07-20 07:48:14' WHERE `users`.`id` = 31[0m
+  ↳ app/controllers/users_controller.rb:43
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:43
+Completed 200 OK in 8ms (Views: 0.6ms | ActiveRecord: 3.5ms)
+
+
+Started GET "/users/users_list" for 127.0.0.1 at 2020-07-20 15:48:14 +0800
+Processing by UsersController#users_list as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT `users`.* FROM `users`[0m
+  ↳ app/controllers/users_controller.rb:57
+Completed 200 OK in 3ms (Views: 1.8ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/users/logout" for 127.0.0.1 at 2020-07-20 15:49:02 +0800
+Processing by UsersController#logout as HTML
+  Parameters: {"userId"=>31, "user"=>{}}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 31 LIMIT 1[0m
+  ↳ app/controllers/users_controller.rb:62
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:65
+  [1m[36mUser Update (2.8ms)[0m  [1m[33mUPDATE `users` SET `authed` = FALSE, `session_id` = NULL, `updated_at` = '2020-07-20 07:49:02' WHERE `users`.`id` = 31[0m
+  ↳ app/controllers/users_controller.rb:65
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:65
+Completed 200 OK in 8ms (Views: 0.2ms | ActiveRecord: 4.7ms)
+
+
+Started POST "/users/file" for 127.0.0.1 at 2020-08-12 15:37:05 +0800
+  [1m[35m (5.4ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ /usr/local/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+Processing by UsersController#file as HTML
+  Parameters: {"file"=>{"file"=>{}}, "user"=>{}}
+No template found for UsersController#file, rendering head :no_content
+Completed 204 No Content in 132ms (ActiveRecord: 21.5ms)
+
+
+Started POST "/users/file" for 127.0.0.1 at 2020-08-12 15:40:20 +0800
+Processing by UsersController#file as HTML
+  Parameters: {"file"=>{}, "user"=>{}}
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 4.8ms)
+
+
+Started POST "/users/file" for 127.0.0.1 at 2020-08-12 15:42:45 +0800
+Processing by UsersController#file as HTML
+  Parameters: {"file"=>{}, "user"=>{}}
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/file" for 127.0.0.1 at 2020-08-12 15:44:50 +0800
+Processing by UsersController#file as HTML
+  Parameters: {"file"=>{}, "user"=>{}}
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/file" for 127.0.0.1 at 2020-08-12 15:46:41 +0800
+Processing by UsersController#file as HTML
+  Parameters: {"file"=>{}, "user"=>{}}
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/file" for 127.0.0.1 at 2020-08-12 15:46:41 +0800
+Processing by UsersController#file as HTML
+  Parameters: {"file"=>{}, "user"=>{}}
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/file" for 127.0.0.1 at 2020-08-12 15:46:41 +0800
+Processing by UsersController#file as HTML
+  Parameters: {"file"=>{}, "user"=>{}}
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/file" for 127.0.0.1 at 2020-08-12 15:50:25 +0800
+Processing by UsersController#file as HTML
+  Parameters: {"file"=>{}, "user"=>{}}
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 3.2ms)
+
+
+Started POST "/users/file" for 127.0.0.1 at 2020-08-12 15:50:25 +0800
+Processing by UsersController#file as HTML
+  Parameters: {"file"=>{}, "user"=>{}}
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/file" for 127.0.0.1 at 2020-08-12 15:50:25 +0800
+Processing by UsersController#file as HTML
+  Parameters: {"file"=>{}, "user"=>{}}
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/file" for 127.0.0.1 at 2020-08-12 15:51:04 +0800
+Processing by UsersController#file as HTML
+  Parameters: {"file"=>{}, "user"=>{}}
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/file" for 127.0.0.1 at 2020-08-12 15:51:04 +0800
+Processing by UsersController#file as HTML
+  Parameters: {"file"=>{}, "user"=>{}}
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/file" for 127.0.0.1 at 2020-08-12 15:51:04 +0800
+Processing by UsersController#file as HTML
+  Parameters: {"file"=>{}, "user"=>{}}
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/file" for 127.0.0.1 at 2020-08-12 15:54:43 +0800
+Processing by UsersController#file as HTML
+  Parameters: {"file"=>{}, "user"=>{}}
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/file" for 127.0.0.1 at 2020-08-12 15:54:43 +0800
+Processing by UsersController#file as HTML
+  Parameters: {"file"=>{}, "user"=>{}}
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/file" for 127.0.0.1 at 2020-08-12 15:54:43 +0800
+Processing by UsersController#file as HTML
+  Parameters: {"file"=>{}, "user"=>{}}
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/file" for 127.0.0.1 at 2020-08-12 16:00:28 +0800
+  [1m[35m (0.4ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ /usr/local/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+Processing by UsersController#file as HTML
+  Parameters: {"file"=>{}, "user"=>{}}
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/file" for 127.0.0.1 at 2020-08-12 16:00:28 +0800
+Processing by UsersController#file as HTML
+  Parameters: {"file"=>{}, "user"=>{}}
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/file" for 127.0.0.1 at 2020-08-12 16:00:28 +0800
+Processing by UsersController#file as HTML
+  Parameters: {"file"=>{}, "user"=>{}}
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/file" for 127.0.0.1 at 2020-08-12 16:01:40 +0800
+Processing by UsersController#file as HTML
+  Parameters: {"file"=>{}, "user"=>{}}
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/file" for 127.0.0.1 at 2020-08-12 16:01:40 +0800
+Processing by UsersController#file as HTML
+  Parameters: {"file"=>{}, "user"=>{}}
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/file" for 127.0.0.1 at 2020-08-12 16:01:40 +0800
+Processing by UsersController#file as HTML
+  Parameters: {"file"=>{}, "user"=>{}}
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/file" for 127.0.0.1 at 2020-08-12 16:08:38 +0800
+  [1m[35m (1.1ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ /usr/local/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+Processing by UsersController#file as HTML
+  Parameters: {"file"=>{}, "user"=>{}}
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/file" for 127.0.0.1 at 2020-08-12 16:08:38 +0800
+Processing by UsersController#file as HTML
+  Parameters: {"file"=>{}, "user"=>{}}
+Completed 200 OK in 0ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/file" for 127.0.0.1 at 2020-08-12 16:08:38 +0800
+Processing by UsersController#file as HTML
+  Parameters: {"file"=>{}, "user"=>{}}
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/file" for 127.0.0.1 at 2020-08-12 16:14:44 +0800
+  [1m[35m (0.6ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ /usr/local/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+Processing by UsersController#file as */*
+  Parameters: {"file"=>#<ActionDispatch::Http::UploadedFile:0x00007ffa96f71758 @tempfile=#<Tempfile:/var/folders/2y/wsqnytjj1ld50h7g0ccdc4dh0000gn/T/RackMultipart20200812-28728-dowd89.mp3>, @original_filename="file.mp3", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"file.mp3\"\r\nContent-Type: application/octet-stream\r\n">}
+Completed 200 OK in 0ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/file" for 127.0.0.1 at 2020-08-12 16:15:02 +0800
+Processing by UsersController#file as */*
+  Parameters: {"file"=>#<ActionDispatch::Http::UploadedFile:0x00007ffa96f61790 @tempfile=#<Tempfile:/var/folders/2y/wsqnytjj1ld50h7g0ccdc4dh0000gn/T/RackMultipart20200812-28728-17019co.mp3>, @original_filename="file.mp3", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"file.mp3\"\r\nContent-Type: application/octet-stream\r\n">}
+Completed 200 OK in 1ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/file" for 127.0.0.1 at 2020-08-12 16:15:42 +0800
+Processing by UsersController#file as */*
+  Parameters: {"file"=>#<ActionDispatch::Http::UploadedFile:0x00007ffa96ad2530 @tempfile=#<Tempfile:/var/folders/2y/wsqnytjj1ld50h7g0ccdc4dh0000gn/T/RackMultipart20200812-28728-f5t268.mp3>, @original_filename="file.mp3", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"file.mp3\"\r\nContent-Type: application/octet-stream\r\n">}
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/file" for 127.0.0.1 at 2020-08-12 16:15:42 +0800
+Started POST "/users/file" for 127.0.0.1 at 2020-08-12 16:15:42 +0800
+Processing by UsersController#file as */*
+  Parameters: {"file"=>#<ActionDispatch::Http::UploadedFile:0x00007ffa9691c498 @tempfile=#<Tempfile:/var/folders/2y/wsqnytjj1ld50h7g0ccdc4dh0000gn/T/RackMultipart20200812-28728-1b4kb89.mp3>, @original_filename="file.mp3", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"file.mp3\"\r\nContent-Type: application/octet-stream\r\n">}
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+  [1m[35m (0.5ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ /usr/local/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+Processing by UsersController#file as */*
+  Parameters: {"file"=>#<ActionDispatch::Http::UploadedFile:0x00007ffa96a21910 @tempfile=#<Tempfile:/var/folders/2y/wsqnytjj1ld50h7g0ccdc4dh0000gn/T/RackMultipart20200812-28728-18d2xza.mp3>, @original_filename="file.mp3", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"file.mp3\"\r\nContent-Type: application/octet-stream\r\n">}
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/file" for 127.0.0.1 at 2020-08-12 16:16:17 +0800
+Processing by UsersController#file as */*
+  Parameters: {"file"=>#<ActionDispatch::Http::UploadedFile:0x00007ffa96f71528 @tempfile=#<Tempfile:/var/folders/2y/wsqnytjj1ld50h7g0ccdc4dh0000gn/T/RackMultipart20200812-28728-do3010.mp3>, @original_filename="file.mp3", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"file.mp3\"\r\nContent-Type: application/octet-stream\r\n">}
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/file" for 127.0.0.1 at 2020-08-12 16:16:17 +0800
+Processing by UsersController#file as */*
+  Parameters: {"file"=>#<ActionDispatch::Http::UploadedFile:0x00007ffa96f53488 @tempfile=#<Tempfile:/var/folders/2y/wsqnytjj1ld50h7g0ccdc4dh0000gn/T/RackMultipart20200812-28728-1t73q6s.mp3>, @original_filename="file.mp3", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"file.mp3\"\r\nContent-Type: application/octet-stream\r\n">}
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/file" for 127.0.0.1 at 2020-08-12 16:16:17 +0800
+Processing by UsersController#file as */*
+  Parameters: {"file"=>#<ActionDispatch::Http::UploadedFile:0x00007ffa9397e5d8 @tempfile=#<Tempfile:/var/folders/2y/wsqnytjj1ld50h7g0ccdc4dh0000gn/T/RackMultipart20200812-28728-1a9pojp.mp3>, @original_filename="file.mp3", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"file.mp3\"\r\nContent-Type: application/octet-stream\r\n">}
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/file" for 127.0.0.1 at 2020-08-12 16:19:30 +0800
+Processing by UsersController#file as */*
+  Parameters: {"file"=>#<ActionDispatch::Http::UploadedFile:0x00007ffa96114a70 @tempfile=#<Tempfile:/var/folders/2y/wsqnytjj1ld50h7g0ccdc4dh0000gn/T/RackMultipart20200812-28728-2frelg.mp3>, @original_filename="file.mp3", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"file.mp3\"\r\nContent-Type: application/octet-stream\r\n">}
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/file" for 127.0.0.1 at 2020-08-12 16:19:30 +0800
+Processing by UsersController#file as */*
+  Parameters: {"file"=>#<ActionDispatch::Http::UploadedFile:0x00007ffa96682b88 @tempfile=#<Tempfile:/var/folders/2y/wsqnytjj1ld50h7g0ccdc4dh0000gn/T/RackMultipart20200812-28728-qjbfpr.mp3>, @original_filename="file.mp3", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"file.mp3\"\r\nContent-Type: application/octet-stream\r\n">}
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/file" for 127.0.0.1 at 2020-08-12 16:19:30 +0800
+Processing by UsersController#file as */*
+  Parameters: {"file"=>#<ActionDispatch::Http::UploadedFile:0x00007ffa96f62848 @tempfile=#<Tempfile:/var/folders/2y/wsqnytjj1ld50h7g0ccdc4dh0000gn/T/RackMultipart20200812-28728-s80gde.mp3>, @original_filename="file.mp3", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"file.mp3\"\r\nContent-Type: application/octet-stream\r\n">}
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/file" for 127.0.0.1 at 2020-08-12 16:22:39 +0800
+Processing by UsersController#file as */*
+  Parameters: {"file"=>#<ActionDispatch::Http::UploadedFile:0x00007ffa939760b8 @tempfile=#<Tempfile:/var/folders/2y/wsqnytjj1ld50h7g0ccdc4dh0000gn/T/RackMultipart20200812-28728-1uqo4s6.mov>, @original_filename="2.mov", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"2.mov\"\r\nContent-Type: application/octet-stream\r\n">}
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/file" for 127.0.0.1 at 2020-08-12 16:22:39 +0800
+Processing by UsersController#file as */*
+  Parameters: {"file"=>#<ActionDispatch::Http::UploadedFile:0x00007ffa96f6aef8 @tempfile=#<Tempfile:/var/folders/2y/wsqnytjj1ld50h7g0ccdc4dh0000gn/T/RackMultipart20200812-28728-1n4ng8g.mov>, @original_filename="2.mov", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"2.mov\"\r\nContent-Type: application/octet-stream\r\n">}
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/file" for 127.0.0.1 at 2020-08-12 16:22:39 +0800
+Processing by UsersController#file as */*
+  Parameters: {"file"=>#<ActionDispatch::Http::UploadedFile:0x00007ffa950a9e88 @tempfile=#<Tempfile:/var/folders/2y/wsqnytjj1ld50h7g0ccdc4dh0000gn/T/RackMultipart20200812-28728-z34odn.mov>, @original_filename="2.mov", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"2.mov\"\r\nContent-Type: application/octet-stream\r\n">}
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/file" for 127.0.0.1 at 2020-08-12 16:23:28 +0800
+Processing by UsersController#file as */*
+  Parameters: {"file"=>#<ActionDispatch::Http::UploadedFile:0x00007ffa96f48c90 @tempfile=#<Tempfile:/var/folders/2y/wsqnytjj1ld50h7g0ccdc4dh0000gn/T/RackMultipart20200812-28728-16agyor.mov>, @original_filename="2.mov", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"2.mov\"\r\nContent-Type: application/octet-stream\r\n">}
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/file" for 127.0.0.1 at 2020-08-12 16:23:28 +0800
+Processing by UsersController#file as */*
+  Parameters: {"file"=>#<ActionDispatch::Http::UploadedFile:0x00007ffa93da7e20 @tempfile=#<Tempfile:/var/folders/2y/wsqnytjj1ld50h7g0ccdc4dh0000gn/T/RackMultipart20200812-28728-16xikw7.mov>, @original_filename="2.mov", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"2.mov\"\r\nContent-Type: application/octet-stream\r\n">}
+Completed 200 OK in 1ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/file" for 127.0.0.1 at 2020-08-12 16:23:28 +0800
+Processing by UsersController#file as */*
+  Parameters: {"file"=>#<ActionDispatch::Http::UploadedFile:0x00007ffa95133b88 @tempfile=#<Tempfile:/var/folders/2y/wsqnytjj1ld50h7g0ccdc4dh0000gn/T/RackMultipart20200812-28728-tob5ww.mov>, @original_filename="2.mov", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"2.mov\"\r\nContent-Type: application/octet-stream\r\n">}
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/file" for 127.0.0.1 at 2020-08-12 18:00:18 +0800
+  [1m[35m (1.3ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ /usr/local/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+Started POST "/users/file" for 127.0.0.1 at 2020-08-12 18:00:18 +0800
+Processing by UsersController#file as */*
+  Parameters: {"file"=>#<ActionDispatch::Http::UploadedFile:0x00007ffa96681760 @tempfile=#<Tempfile:/var/folders/2y/wsqnytjj1ld50h7g0ccdc4dh0000gn/T/RackMultipart20200812-28728-1f0orja.mov>, @original_filename="2.mov", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"2.mov\"\r\nContent-Type: application/octet-stream\r\n">}
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/file" for 127.0.0.1 at 2020-08-12 18:00:18 +0800
+  [1m[35m (1.0ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ /usr/local/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+Processing by UsersController#file as */*
+  Parameters: {"file"=>#<ActionDispatch::Http::UploadedFile:0x00007ffa96f5a4b8 @tempfile=#<Tempfile:/var/folders/2y/wsqnytjj1ld50h7g0ccdc4dh0000gn/T/RackMultipart20200812-28728-z2c6ah.mov>, @original_filename="2.mov", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"2.mov\"\r\nContent-Type: application/octet-stream\r\n">}
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+  [1m[35m (0.5ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ /usr/local/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+Processing by UsersController#file as */*
+  Parameters: {"file"=>#<ActionDispatch::Http::UploadedFile:0x00007ffa96f4aba8 @tempfile=#<Tempfile:/var/folders/2y/wsqnytjj1ld50h7g0ccdc4dh0000gn/T/RackMultipart20200812-28728-4t601k.mov>, @original_filename="2.mov", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"2.mov\"\r\nContent-Type: application/octet-stream\r\n">}
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/file" for ::1 at 2020-08-12 18:01:10 +0800
+Processing by UsersController#file as */*
+  Parameters: {"file"=>#<ActionDispatch::Http::UploadedFile:0x00007ffa9398e8c0 @tempfile=#<Tempfile:/var/folders/2y/wsqnytjj1ld50h7g0ccdc4dh0000gn/T/RackMultipart20200812-28728-p8y81c.mov>, @original_filename="2.mov", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"2.mov\"\r\nContent-Type: application/octet-stream\r\n">}
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/file" for ::1 at 2020-08-12 18:01:10 +0800
+Processing by UsersController#file as */*
+  Parameters: {"file"=>#<ActionDispatch::Http::UploadedFile:0x00007ffa96f71500 @tempfile=#<Tempfile:/var/folders/2y/wsqnytjj1ld50h7g0ccdc4dh0000gn/T/RackMultipart20200812-28728-16v3duc.mov>, @original_filename="2.mov", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"2.mov\"\r\nContent-Type: application/octet-stream\r\n">}
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/file" for ::1 at 2020-08-12 18:01:10 +0800
+Processing by UsersController#file as */*
+  Parameters: {"file"=>#<ActionDispatch::Http::UploadedFile:0x00007ffa950b6db8 @tempfile=#<Tempfile:/var/folders/2y/wsqnytjj1ld50h7g0ccdc4dh0000gn/T/RackMultipart20200812-28728-1o7t6ji.mov>, @original_filename="2.mov", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"2.mov\"\r\nContent-Type: application/octet-stream\r\n">}
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/file" for 127.0.0.1 at 2020-08-12 18:04:03 +0800
+Processing by UsersController#file as */*
+  Parameters: {"file"=>#<ActionDispatch::Http::UploadedFile:0x00007ffa96f51cf0 @tempfile=#<Tempfile:/var/folders/2y/wsqnytjj1ld50h7g0ccdc4dh0000gn/T/RackMultipart20200812-28728-1a887kf.mov>, @original_filename="2.mov", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"2.mov\"\r\nContent-Type: application/octet-stream\r\n">}
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/file" for 127.0.0.1 at 2020-08-12 18:04:03 +0800
+Processing by UsersController#file as */*
+  Parameters: {"file"=>#<ActionDispatch::Http::UploadedFile:0x00007ffa939c78a0 @tempfile=#<Tempfile:/var/folders/2y/wsqnytjj1ld50h7g0ccdc4dh0000gn/T/RackMultipart20200812-28728-pe8nx4.mov>, @original_filename="2.mov", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"2.mov\"\r\nContent-Type: application/octet-stream\r\n">}
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/file" for 127.0.0.1 at 2020-08-12 18:04:03 +0800
+Processing by UsersController#file as */*
+  Parameters: {"file"=>#<ActionDispatch::Http::UploadedFile:0x00007ffa961f6c40 @tempfile=#<Tempfile:/var/folders/2y/wsqnytjj1ld50h7g0ccdc4dh0000gn/T/RackMultipart20200812-28728-zsy14d.mov>, @original_filename="2.mov", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"2.mov\"\r\nContent-Type: application/octet-stream\r\n">}
+Completed 200 OK in 0ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/file" for 127.0.0.1 at 2020-08-13 09:43:32 +0800
+Started POST "/users/file" for 127.0.0.1 at 2020-08-13 09:43:32 +0800
+Started POST "/users/file" for 127.0.0.1 at 2020-08-13 09:43:32 +0800
+  [1m[35m (5.9ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ /usr/local/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (6.6ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (5.8ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ /usr/local/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+  ↳ /usr/local/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+Processing by UsersController#file as */*
+Processing by UsersController#file as */*
+  Parameters: {"file"=>#<ActionDispatch::Http::UploadedFile:0x00007ffa96f5a918 @tempfile=#<Tempfile:/var/folders/2y/wsqnytjj1ld50h7g0ccdc4dh0000gn/T/RackMultipart20200813-28728-17rd59z.mov>, @original_filename="2.mov", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"2.mov\"\r\nContent-Type: application/octet-stream\r\n">}
+Processing by UsersController#file as */*
+  Parameters: {"file"=>#<ActionDispatch::Http::UploadedFile:0x00007ffa96f51138 @tempfile=#<Tempfile:/var/folders/2y/wsqnytjj1ld50h7g0ccdc4dh0000gn/T/RackMultipart20200813-28728-1aojkdn.mov>, @original_filename="2.mov", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"2.mov\"\r\nContent-Type: application/octet-stream\r\n">}
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+  Parameters: {"file"=>#<ActionDispatch::Http::UploadedFile:0x00007ffa96f53b90 @tempfile=#<Tempfile:/var/folders/2y/wsqnytjj1ld50h7g0ccdc4dh0000gn/T/RackMultipart20200813-28728-1nmal3d.mov>, @original_filename="2.mov", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"2.mov\"\r\nContent-Type: application/octet-stream\r\n">}
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Completed 200 OK in 2ms (Views: 1.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/file" for ::1 at 2020-08-13 09:44:15 +0800
+Processing by UsersController#file as */*
+  Parameters: {"file"=>#<ActionDispatch::Http::UploadedFile:0x00007ffa96f612b8 @tempfile=#<Tempfile:/var/folders/2y/wsqnytjj1ld50h7g0ccdc4dh0000gn/T/RackMultipart20200813-28728-iue8hf.mov>, @original_filename="2.mov", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"2.mov\"\r\nContent-Type: application/octet-stream\r\n">}
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/file" for ::1 at 2020-08-13 09:44:15 +0800
+Processing by UsersController#file as */*
+  Parameters: {"file"=>#<ActionDispatch::Http::UploadedFile:0x00007ffa96681170 @tempfile=#<Tempfile:/var/folders/2y/wsqnytjj1ld50h7g0ccdc4dh0000gn/T/RackMultipart20200813-28728-90gemb.mov>, @original_filename="2.mov", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"2.mov\"\r\nContent-Type: application/octet-stream\r\n">}
+Completed 200 OK in 0ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/file" for ::1 at 2020-08-13 09:44:15 +0800
+Processing by UsersController#file as */*
+  Parameters: {"file"=>#<ActionDispatch::Http::UploadedFile:0x00007ffa96f5a238 @tempfile=#<Tempfile:/var/folders/2y/wsqnytjj1ld50h7g0ccdc4dh0000gn/T/RackMultipart20200813-28728-1k2791o.mov>, @original_filename="2.mov", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"2.mov\"\r\nContent-Type: application/octet-stream\r\n">}
+Completed 200 OK in 0ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/file" for ::1 at 2020-08-13 13:08:08 +0800
+  [1m[35m (1.4ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ /usr/local/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+Started POST "/users/file" for ::1 at 2020-08-13 13:08:08 +0800
+Processing by UsersController#file as */*
+  Parameters: {"file"=>#<ActionDispatch::Http::UploadedFile:0x00007ffa939b4a70 @tempfile=#<Tempfile:/var/folders/2y/wsqnytjj1ld50h7g0ccdc4dh0000gn/T/RackMultipart20200813-28728-4y5owi.mov>, @original_filename="2.mov", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"2.mov\"\r\nContent-Type: application/octet-stream\r\n">}
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/file" for ::1 at 2020-08-13 13:08:08 +0800
+  [1m[35m (0.4ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ /usr/local/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+Processing by UsersController#file as */*
+  Parameters: {"file"=>#<ActionDispatch::Http::UploadedFile:0x00007ffa93a07478 @tempfile=#<Tempfile:/var/folders/2y/wsqnytjj1ld50h7g0ccdc4dh0000gn/T/RackMultipart20200813-28728-vldz23.mov>, @original_filename="2.mov", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"2.mov\"\r\nContent-Type: application/octet-stream\r\n">}
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+  [1m[35m (3.0ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ /usr/local/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+Processing by UsersController#file as */*
+  Parameters: {"file"=>#<ActionDispatch::Http::UploadedFile:0x00007ffa961f5868 @tempfile=#<Tempfile:/var/folders/2y/wsqnytjj1ld50h7g0ccdc4dh0000gn/T/RackMultipart20200813-28728-1j0rnsg.mov>, @original_filename="2.mov", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"2.mov\"\r\nContent-Type: application/octet-stream\r\n">}
+Completed 200 OK in 1ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/file" for 127.0.0.1 at 2020-08-13 13:09:06 +0800
+Processing by UsersController#file as */*
+  Parameters: {"file"=>#<ActionDispatch::Http::UploadedFile:0x00007ffa953d5620 @tempfile=#<Tempfile:/var/folders/2y/wsqnytjj1ld50h7g0ccdc4dh0000gn/T/RackMultipart20200813-28728-9251lv.mov>, @original_filename="2.mov", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"2.mov\"\r\nContent-Type: application/octet-stream\r\n">}
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/file" for 127.0.0.1 at 2020-08-13 13:09:06 +0800
+Processing by UsersController#file as */*
+  Parameters: {"file"=>#<ActionDispatch::Http::UploadedFile:0x00007ffa96683268 @tempfile=#<Tempfile:/var/folders/2y/wsqnytjj1ld50h7g0ccdc4dh0000gn/T/RackMultipart20200813-28728-5r8f4t.mov>, @original_filename="2.mov", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"2.mov\"\r\nContent-Type: application/octet-stream\r\n">}
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/file" for 127.0.0.1 at 2020-08-13 13:09:06 +0800
+Processing by UsersController#file as */*
+  Parameters: {"file"=>#<ActionDispatch::Http::UploadedFile:0x00007ffa96f61df8 @tempfile=#<Tempfile:/var/folders/2y/wsqnytjj1ld50h7g0ccdc4dh0000gn/T/RackMultipart20200813-28728-1mjldtu.mov>, @original_filename="2.mov", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"2.mov\"\r\nContent-Type: application/octet-stream\r\n">}
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/file" for 127.0.0.1 at 2020-08-13 13:09:55 +0800
+Processing by UsersController#file as */*
+  Parameters: {"file"=>#<ActionDispatch::Http::UploadedFile:0x00007ffa96f421b0 @tempfile=#<Tempfile:/var/folders/2y/wsqnytjj1ld50h7g0ccdc4dh0000gn/T/RackMultipart20200813-28728-eoc4fz.mov>, @original_filename="2.mov", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"2.mov\"\r\nContent-Type: application/octet-stream\r\n">}
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/file" for 127.0.0.1 at 2020-08-13 13:09:55 +0800
+Processing by UsersController#file as */*
+  Parameters: {"file"=>#<ActionDispatch::Http::UploadedFile:0x00007ffa95519798 @tempfile=#<Tempfile:/var/folders/2y/wsqnytjj1ld50h7g0ccdc4dh0000gn/T/RackMultipart20200813-28728-1v2y431.mov>, @original_filename="2.mov", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"2.mov\"\r\nContent-Type: application/octet-stream\r\n">}
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/file" for 127.0.0.1 at 2020-08-13 13:09:55 +0800
+Processing by UsersController#file as */*
+  Parameters: {"file"=>#<ActionDispatch::Http::UploadedFile:0x00007ffa9666b988 @tempfile=#<Tempfile:/var/folders/2y/wsqnytjj1ld50h7g0ccdc4dh0000gn/T/RackMultipart20200813-28728-1d4k0x7.mov>, @original_filename="2.mov", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"2.mov\"\r\nContent-Type: application/octet-stream\r\n">}
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/file" for 127.0.0.1 at 2020-08-13 13:09:55 +0800
+Started POST "/users/file" for 127.0.0.1 at 2020-08-13 13:09:55 +0800
+Processing by UsersController#file as */*
+  Parameters: {"file"=>#<ActionDispatch::Http::UploadedFile:0x00007ffa96f10728 @tempfile=#<Tempfile:/var/folders/2y/wsqnytjj1ld50h7g0ccdc4dh0000gn/T/RackMultipart20200813-28728-19ugan2.mov>, @original_filename="2.mov", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"2.mov\"\r\nContent-Type: application/octet-stream\r\n">}
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Processing by UsersController#file as */*
+  Parameters: {"file"=>#<ActionDispatch::Http::UploadedFile:0x00007ffa9584f1d8 @tempfile=#<Tempfile:/var/folders/2y/wsqnytjj1ld50h7g0ccdc4dh0000gn/T/RackMultipart20200813-28728-1utn48h.mov>, @original_filename="2.mov", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"2.mov\"\r\nContent-Type: application/octet-stream\r\n">}
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/file" for 127.0.0.1 at 2020-08-13 13:09:55 +0800
+Processing by UsersController#file as */*
+  Parameters: {"file"=>#<ActionDispatch::Http::UploadedFile:0x00007ffa96628b10 @tempfile=#<Tempfile:/var/folders/2y/wsqnytjj1ld50h7g0ccdc4dh0000gn/T/RackMultipart20200813-28728-vluqdu.mov>, @original_filename="2.mov", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"2.mov\"\r\nContent-Type: application/octet-stream\r\n">}
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/file" for 127.0.0.1 at 2020-08-13 13:09:55 +0800
+Processing by UsersController#file as */*
+  Parameters: {"file"=>#<ActionDispatch::Http::UploadedFile:0x00007ffa954e9b60 @tempfile=#<Tempfile:/var/folders/2y/wsqnytjj1ld50h7g0ccdc4dh0000gn/T/RackMultipart20200813-28728-1bcd349.mov>, @original_filename="2.mov", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"2.mov\"\r\nContent-Type: application/octet-stream\r\n">}
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/file" for 127.0.0.1 at 2020-08-13 13:09:55 +0800
+Processing by UsersController#file as */*
+  Parameters: {"file"=>#<ActionDispatch::Http::UploadedFile:0x00007ffa93985c98 @tempfile=#<Tempfile:/var/folders/2y/wsqnytjj1ld50h7g0ccdc4dh0000gn/T/RackMultipart20200813-28728-1d49qhh.mov>, @original_filename="2.mov", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"2.mov\"\r\nContent-Type: application/octet-stream\r\n">}
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/file" for 127.0.0.1 at 2020-08-13 13:09:55 +0800
+Processing by UsersController#file as */*
+  Parameters: {"file"=>#<ActionDispatch::Http::UploadedFile:0x00007ffa9619ed88 @tempfile=#<Tempfile:/var/folders/2y/wsqnytjj1ld50h7g0ccdc4dh0000gn/T/RackMultipart20200813-28728-1v5154c.mov>, @original_filename="2.mov", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"2.mov\"\r\nContent-Type: application/octet-stream\r\n">}
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/file" for 127.0.0.1 at 2020-08-13 13:09:55 +0800
+Started POST "/users/file" for 127.0.0.1 at 2020-08-13 13:09:55 +0800
+Processing by UsersController#file as */*
+  Parameters: {"file"=>#<ActionDispatch::Http::UploadedFile:0x00007ffa9625f060 @tempfile=#<Tempfile:/var/folders/2y/wsqnytjj1ld50h7g0ccdc4dh0000gn/T/RackMultipart20200813-28728-1rsz2n.mov>, @original_filename="2.mov", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"2.mov\"\r\nContent-Type: application/octet-stream\r\n">}
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Processing by UsersController#file as */*
+  Parameters: {"file"=>#<ActionDispatch::Http::UploadedFile:0x00007ffa96a9ab30 @tempfile=#<Tempfile:/var/folders/2y/wsqnytjj1ld50h7g0ccdc4dh0000gn/T/RackMultipart20200813-28728-umfkuw.mov>, @original_filename="2.mov", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"2.mov\"\r\nContent-Type: application/octet-stream\r\n">}
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/file" for 127.0.0.1 at 2020-08-13 13:09:55 +0800
+Processing by UsersController#file as */*
+  Parameters: {"file"=>#<ActionDispatch::Http::UploadedFile:0x00007ffa962ad990 @tempfile=#<Tempfile:/var/folders/2y/wsqnytjj1ld50h7g0ccdc4dh0000gn/T/RackMultipart20200813-28728-10iat97.mov>, @original_filename="2.mov", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"2.mov\"\r\nContent-Type: application/octet-stream\r\n">}
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/file" for 127.0.0.1 at 2020-08-13 13:09:55 +0800
+Processing by UsersController#file as */*
+  Parameters: {"file"=>#<ActionDispatch::Http::UploadedFile:0x00007ffa96f62488 @tempfile=#<Tempfile:/var/folders/2y/wsqnytjj1ld50h7g0ccdc4dh0000gn/T/RackMultipart20200813-28728-1l8gq51.mov>, @original_filename="2.mov", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"2.mov\"\r\nContent-Type: application/octet-stream\r\n">}
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/file" for 127.0.0.1 at 2020-08-13 13:09:55 +0800
+Processing by UsersController#file as */*
+  Parameters: {"file"=>#<ActionDispatch::Http::UploadedFile:0x00007ffa93d97778 @tempfile=#<Tempfile:/var/folders/2y/wsqnytjj1ld50h7g0ccdc4dh0000gn/T/RackMultipart20200813-28728-1egb0na.mov>, @original_filename="2.mov", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"2.mov\"\r\nContent-Type: application/octet-stream\r\n">}
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/file" for 127.0.0.1 at 2020-08-13 13:09:55 +0800
+Processing by UsersController#file as */*
+  Parameters: {"file"=>#<ActionDispatch::Http::UploadedFile:0x00007ffa96671c20 @tempfile=#<Tempfile:/var/folders/2y/wsqnytjj1ld50h7g0ccdc4dh0000gn/T/RackMultipart20200813-28728-9wsloe.mov>, @original_filename="2.mov", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"2.mov\"\r\nContent-Type: application/octet-stream\r\n">}
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/file" for 127.0.0.1 at 2020-08-13 13:09:55 +0800
+Started POST "/users/file" for 127.0.0.1 at 2020-08-13 13:09:55 +0800
+Processing by UsersController#file as */*
+  Parameters: {"file"=>#<ActionDispatch::Http::UploadedFile:0x00007ffa9662b9c8 @tempfile=#<Tempfile:/var/folders/2y/wsqnytjj1ld50h7g0ccdc4dh0000gn/T/RackMultipart20200813-28728-13vgf2k.mov>, @original_filename="2.mov", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"2.mov\"\r\nContent-Type: application/octet-stream\r\n">}
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Processing by UsersController#file as */*
+  Parameters: {"file"=>#<ActionDispatch::Http::UploadedFile:0x00007ffa954f3070 @tempfile=#<Tempfile:/var/folders/2y/wsqnytjj1ld50h7g0ccdc4dh0000gn/T/RackMultipart20200813-28728-osl9tt.mov>, @original_filename="2.mov", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"2.mov\"\r\nContent-Type: application/octet-stream\r\n">}
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/file" for 127.0.0.1 at 2020-08-13 13:09:55 +0800
+Processing by UsersController#file as */*
+  Parameters: {"file"=>#<ActionDispatch::Http::UploadedFile:0x00007ffa954d8108 @tempfile=#<Tempfile:/var/folders/2y/wsqnytjj1ld50h7g0ccdc4dh0000gn/T/RackMultipart20200813-28728-wgxko0.mov>, @original_filename="2.mov", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"2.mov\"\r\nContent-Type: application/octet-stream\r\n">}
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/file" for 127.0.0.1 at 2020-08-13 13:09:55 +0800
+Processing by UsersController#file as */*
+  Parameters: {"file"=>#<ActionDispatch::Http::UploadedFile:0x00007ffa965f3460 @tempfile=#<Tempfile:/var/folders/2y/wsqnytjj1ld50h7g0ccdc4dh0000gn/T/RackMultipart20200813-28728-1w87bav.mov>, @original_filename="2.mov", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"2.mov\"\r\nContent-Type: application/octet-stream\r\n">}
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/file" for 127.0.0.1 at 2020-08-13 13:09:55 +0800
+Processing by UsersController#file as */*
+  Parameters: {"file"=>#<ActionDispatch::Http::UploadedFile:0x00007ffa93d44500 @tempfile=#<Tempfile:/var/folders/2y/wsqnytjj1ld50h7g0ccdc4dh0000gn/T/RackMultipart20200813-28728-1a5mgp1.mov>, @original_filename="2.mov", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"2.mov\"\r\nContent-Type: application/octet-stream\r\n">}
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/file" for 127.0.0.1 at 2020-08-13 13:09:55 +0800
+Processing by UsersController#file as */*
+  Parameters: {"file"=>#<ActionDispatch::Http::UploadedFile:0x00007ffa965ca4c0 @tempfile=#<Tempfile:/var/folders/2y/wsqnytjj1ld50h7g0ccdc4dh0000gn/T/RackMultipart20200813-28728-18ixj7g.mov>, @original_filename="2.mov", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"2.mov\"\r\nContent-Type: application/octet-stream\r\n">}
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/file" for 127.0.0.1 at 2020-08-13 13:09:55 +0800
+Started POST "/users/file" for 127.0.0.1 at 2020-08-13 13:09:55 +0800
+Processing by UsersController#file as */*
+  Parameters: {"file"=>#<ActionDispatch::Http::UploadedFile:0x00007ffa96e716a0 @tempfile=#<Tempfile:/var/folders/2y/wsqnytjj1ld50h7g0ccdc4dh0000gn/T/RackMultipart20200813-28728-c6xkb2.mov>, @original_filename="2.mov", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"2.mov\"\r\nContent-Type: application/octet-stream\r\n">}
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Processing by UsersController#file as */*
+  Parameters: {"file"=>#<ActionDispatch::Http::UploadedFile:0x00007ffa96e6ac10 @tempfile=#<Tempfile:/var/folders/2y/wsqnytjj1ld50h7g0ccdc4dh0000gn/T/RackMultipart20200813-28728-1iygxdb.mov>, @original_filename="2.mov", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"2.mov\"\r\nContent-Type: application/octet-stream\r\n">}
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/file" for 127.0.0.1 at 2020-08-13 13:09:55 +0800
+Processing by UsersController#file as */*
+  Parameters: {"file"=>#<ActionDispatch::Http::UploadedFile:0x00007ffa96124830 @tempfile=#<Tempfile:/var/folders/2y/wsqnytjj1ld50h7g0ccdc4dh0000gn/T/RackMultipart20200813-28728-16e1xwp.mov>, @original_filename="2.mov", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"2.mov\"\r\nContent-Type: application/octet-stream\r\n">}
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/file" for 127.0.0.1 at 2020-08-13 13:09:55 +0800
+Started POST "/users/file" for 127.0.0.1 at 2020-08-13 13:09:55 +0800
+Processing by UsersController#file as */*
+  Parameters: {"file"=>#<ActionDispatch::Http::UploadedFile:0x00007ffa96295840 @tempfile=#<Tempfile:/var/folders/2y/wsqnytjj1ld50h7g0ccdc4dh0000gn/T/RackMultipart20200813-28728-1rmqdjh.mov>, @original_filename="2.mov", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"2.mov\"\r\nContent-Type: application/octet-stream\r\n">}
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Processing by UsersController#file as */*
+  Parameters: {"file"=>#<ActionDispatch::Http::UploadedFile:0x00007ffa962bece0 @tempfile=#<Tempfile:/var/folders/2y/wsqnytjj1ld50h7g0ccdc4dh0000gn/T/RackMultipart20200813-28728-102cnr1.mov>, @original_filename="2.mov", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"2.mov\"\r\nContent-Type: application/octet-stream\r\n">}
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/file" for 127.0.0.1 at 2020-08-13 13:09:55 +0800
+Processing by UsersController#file as */*
+  Parameters: {"file"=>#<ActionDispatch::Http::UploadedFile:0x00007ffa96be91a8 @tempfile=#<Tempfile:/var/folders/2y/wsqnytjj1ld50h7g0ccdc4dh0000gn/T/RackMultipart20200813-28728-6l87wd.mov>, @original_filename="2.mov", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"2.mov\"\r\nContent-Type: application/octet-stream\r\n">}
+Completed 200 OK in 0ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/file" for 127.0.0.1 at 2020-08-13 13:09:55 +0800
+Processing by UsersController#file as */*
+  Parameters: {"file"=>#<ActionDispatch::Http::UploadedFile:0x00007ffa96c13868 @tempfile=#<Tempfile:/var/folders/2y/wsqnytjj1ld50h7g0ccdc4dh0000gn/T/RackMultipart20200813-28728-1ipaxdw.mov>, @original_filename="2.mov", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"2.mov\"\r\nContent-Type: application/octet-stream\r\n">}
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/file" for 127.0.0.1 at 2020-08-13 13:09:55 +0800
+Processing by UsersController#file as */*
+  Parameters: {"file"=>#<ActionDispatch::Http::UploadedFile:0x00007ffa958225e8 @tempfile=#<Tempfile:/var/folders/2y/wsqnytjj1ld50h7g0ccdc4dh0000gn/T/RackMultipart20200813-28728-y1z4v2.mov>, @original_filename="2.mov", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"2.mov\"\r\nContent-Type: application/octet-stream\r\n">}
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/file" for 127.0.0.1 at 2020-08-13 13:09:55 +0800
+Processing by UsersController#file as */*
+  Parameters: {"file"=>#<ActionDispatch::Http::UploadedFile:0x00007ffa96c707e8 @tempfile=#<Tempfile:/var/folders/2y/wsqnytjj1ld50h7g0ccdc4dh0000gn/T/RackMultipart20200813-28728-rfuqhl.mov>, @original_filename="2.mov", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"2.mov\"\r\nContent-Type: application/octet-stream\r\n">}
+Completed 200 OK in 0ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/file" for 127.0.0.1 at 2020-08-13 13:10:53 +0800
+Processing by UsersController#file as */*
+  Parameters: {"file"=>#<ActionDispatch::Http::UploadedFile:0x00007ffa93b7a8a0 @tempfile=#<Tempfile:/var/folders/2y/wsqnytjj1ld50h7g0ccdc4dh0000gn/T/RackMultipart20200813-28728-1w8fw7h.mov>, @original_filename="2.mov", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"2.mov\"\r\nContent-Type: application/octet-stream\r\n">}
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/file" for 127.0.0.1 at 2020-08-13 13:10:53 +0800
+Processing by UsersController#file as */*
+  Parameters: {"file"=>#<ActionDispatch::Http::UploadedFile:0x00007ffa93c5bb48 @tempfile=#<Tempfile:/var/folders/2y/wsqnytjj1ld50h7g0ccdc4dh0000gn/T/RackMultipart20200813-28728-dy7i0f.mov>, @original_filename="2.mov", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"2.mov\"\r\nContent-Type: application/octet-stream\r\n">}
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/file" for 127.0.0.1 at 2020-08-13 13:10:53 +0800
+Processing by UsersController#file as */*
+  Parameters: {"file"=>#<ActionDispatch::Http::UploadedFile:0x00007ffa93c8ada8 @tempfile=#<Tempfile:/var/folders/2y/wsqnytjj1ld50h7g0ccdc4dh0000gn/T/RackMultipart20200813-28728-1sd618p.mov>, @original_filename="2.mov", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"2.mov\"\r\nContent-Type: application/octet-stream\r\n">}
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/file" for 127.0.0.1 at 2020-08-13 13:10:53 +0800
+Processing by UsersController#file as */*
+  Parameters: {"file"=>#<ActionDispatch::Http::UploadedFile:0x00007ffa9534fa70 @tempfile=#<Tempfile:/var/folders/2y/wsqnytjj1ld50h7g0ccdc4dh0000gn/T/RackMultipart20200813-28728-gemlw7.mov>, @original_filename="2.mov", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"2.mov\"\r\nContent-Type: application/octet-stream\r\n">}
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/file" for 127.0.0.1 at 2020-08-13 13:10:53 +0800
+Processing by UsersController#file as */*
+  Parameters: {"file"=>#<ActionDispatch::Http::UploadedFile:0x00007ffa93ca3268 @tempfile=#<Tempfile:/var/folders/2y/wsqnytjj1ld50h7g0ccdc4dh0000gn/T/RackMultipart20200813-28728-1dw9nex.mov>, @original_filename="2.mov", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"2.mov\"\r\nContent-Type: application/octet-stream\r\n">}
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/file" for 127.0.0.1 at 2020-08-13 13:10:53 +0800
+Processing by UsersController#file as */*
+  Parameters: {"file"=>#<ActionDispatch::Http::UploadedFile:0x00007ffa953d3be0 @tempfile=#<Tempfile:/var/folders/2y/wsqnytjj1ld50h7g0ccdc4dh0000gn/T/RackMultipart20200813-28728-11yhij1.mov>, @original_filename="2.mov", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"2.mov\"\r\nContent-Type: application/octet-stream\r\n">}
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/file" for 127.0.0.1 at 2020-08-13 13:10:53 +0800
+Processing by UsersController#file as */*
+  Parameters: {"file"=>#<ActionDispatch::Http::UploadedFile:0x00007ffa96528ee0 @tempfile=#<Tempfile:/var/folders/2y/wsqnytjj1ld50h7g0ccdc4dh0000gn/T/RackMultipart20200813-28728-uol6fk.mov>, @original_filename="2.mov", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"2.mov\"\r\nContent-Type: application/octet-stream\r\n">}
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/file" for 127.0.0.1 at 2020-08-13 13:10:53 +0800
+Processing by UsersController#file as */*
+  Parameters: {"file"=>#<ActionDispatch::Http::UploadedFile:0x00007ffa96f61b28 @tempfile=#<Tempfile:/var/folders/2y/wsqnytjj1ld50h7g0ccdc4dh0000gn/T/RackMultipart20200813-28728-172qqi6.mov>, @original_filename="2.mov", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"2.mov\"\r\nContent-Type: application/octet-stream\r\n">}
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/file" for 127.0.0.1 at 2020-08-13 13:10:53 +0800
+Processing by UsersController#file as */*
+  Parameters: {"file"=>#<ActionDispatch::Http::UploadedFile:0x00007ffa96f4a928 @tempfile=#<Tempfile:/var/folders/2y/wsqnytjj1ld50h7g0ccdc4dh0000gn/T/RackMultipart20200813-28728-1yrwkih.mov>, @original_filename="2.mov", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"2.mov\"\r\nContent-Type: application/octet-stream\r\n">}
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/file" for 127.0.0.1 at 2020-08-13 13:10:53 +0800
+Processing by UsersController#file as */*
+  Parameters: {"file"=>#<ActionDispatch::Http::UploadedFile:0x00007ffa953d78d0 @tempfile=#<Tempfile:/var/folders/2y/wsqnytjj1ld50h7g0ccdc4dh0000gn/T/RackMultipart20200813-28728-n20ih5.mov>, @original_filename="2.mov", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"2.mov\"\r\nContent-Type: application/octet-stream\r\n">}
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/file" for 127.0.0.1 at 2020-08-13 13:10:53 +0800
+Processing by UsersController#file as */*
+  Parameters: {"file"=>#<ActionDispatch::Http::UploadedFile:0x00007ffa93dae400 @tempfile=#<Tempfile:/var/folders/2y/wsqnytjj1ld50h7g0ccdc4dh0000gn/T/RackMultipart20200813-28728-rzbs1d.mov>, @original_filename="2.mov", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"2.mov\"\r\nContent-Type: application/octet-stream\r\n">}
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/file" for 127.0.0.1 at 2020-08-13 13:10:53 +0800
+Processing by UsersController#file as */*
+  Parameters: {"file"=>#<ActionDispatch::Http::UploadedFile:0x00007ffa955277a8 @tempfile=#<Tempfile:/var/folders/2y/wsqnytjj1ld50h7g0ccdc4dh0000gn/T/RackMultipart20200813-28728-c8aj1k.mov>, @original_filename="2.mov", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"2.mov\"\r\nContent-Type: application/octet-stream\r\n">}
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/file" for 127.0.0.1 at 2020-08-13 13:10:53 +0800
+Processing by UsersController#file as */*
+  Parameters: {"file"=>#<ActionDispatch::Http::UploadedFile:0x00007ffa93d83ca0 @tempfile=#<Tempfile:/var/folders/2y/wsqnytjj1ld50h7g0ccdc4dh0000gn/T/RackMultipart20200813-28728-wbigx6.mov>, @original_filename="2.mov", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"2.mov\"\r\nContent-Type: application/octet-stream\r\n">}
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/file" for 127.0.0.1 at 2020-08-13 13:10:53 +0800
+Processing by UsersController#file as */*
+  Parameters: {"file"=>#<ActionDispatch::Http::UploadedFile:0x00007ffa966815f8 @tempfile=#<Tempfile:/var/folders/2y/wsqnytjj1ld50h7g0ccdc4dh0000gn/T/RackMultipart20200813-28728-11sk7rp.mov>, @original_filename="2.mov", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"2.mov\"\r\nContent-Type: application/octet-stream\r\n">}
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/file" for 127.0.0.1 at 2020-08-13 13:10:53 +0800
+Processing by UsersController#file as */*
+  Parameters: {"file"=>#<ActionDispatch::Http::UploadedFile:0x00007ffa96f59e28 @tempfile=#<Tempfile:/var/folders/2y/wsqnytjj1ld50h7g0ccdc4dh0000gn/T/RackMultipart20200813-28728-18kewxc.mov>, @original_filename="2.mov", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"2.mov\"\r\nContent-Type: application/octet-stream\r\n">}
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/file" for 127.0.0.1 at 2020-08-13 13:10:53 +0800
+Started POST "/users/file" for 127.0.0.1 at 2020-08-13 13:10:53 +0800
+Processing by UsersController#file as */*
+  Parameters: {"file"=>#<ActionDispatch::Http::UploadedFile:0x00007ffa95856028 @tempfile=#<Tempfile:/var/folders/2y/wsqnytjj1ld50h7g0ccdc4dh0000gn/T/RackMultipart20200813-28728-uvi1a7.mov>, @original_filename="2.mov", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"2.mov\"\r\nContent-Type: application/octet-stream\r\n">}
+Completed 200 OK in 0ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Processing by UsersController#file as */*
+  Parameters: {"file"=>#<ActionDispatch::Http::UploadedFile:0x00007ffa96f3bec8 @tempfile=#<Tempfile:/var/folders/2y/wsqnytjj1ld50h7g0ccdc4dh0000gn/T/RackMultipart20200813-28728-4a3jwc.mov>, @original_filename="2.mov", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"2.mov\"\r\nContent-Type: application/octet-stream\r\n">}
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/file" for 127.0.0.1 at 2020-08-13 13:10:53 +0800
+Processing by UsersController#file as */*
+  Parameters: {"file"=>#<ActionDispatch::Http::UploadedFile:0x00007ffa93d9c048 @tempfile=#<Tempfile:/var/folders/2y/wsqnytjj1ld50h7g0ccdc4dh0000gn/T/RackMultipart20200813-28728-hagezg.mov>, @original_filename="2.mov", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"2.mov\"\r\nContent-Type: application/octet-stream\r\n">}
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/file" for 127.0.0.1 at 2020-08-13 13:10:53 +0800
+Processing by UsersController#file as */*
+  Parameters: {"file"=>#<ActionDispatch::Http::UploadedFile:0x00007ffa96f32008 @tempfile=#<Tempfile:/var/folders/2y/wsqnytjj1ld50h7g0ccdc4dh0000gn/T/RackMultipart20200813-28728-1gpassf.mov>, @original_filename="2.mov", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"2.mov\"\r\nContent-Type: application/octet-stream\r\n">}
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/file" for 127.0.0.1 at 2020-08-13 13:10:53 +0800
+Processing by UsersController#file as */*
+  Parameters: {"file"=>#<ActionDispatch::Http::UploadedFile:0x00007ffa96f1be98 @tempfile=#<Tempfile:/var/folders/2y/wsqnytjj1ld50h7g0ccdc4dh0000gn/T/RackMultipart20200813-28728-1tidh8t.mov>, @original_filename="2.mov", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"2.mov\"\r\nContent-Type: application/octet-stream\r\n">}
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/file" for 127.0.0.1 at 2020-08-13 13:10:53 +0800
+Processing by UsersController#file as */*
+  Parameters: {"file"=>#<ActionDispatch::Http::UploadedFile:0x00007ffa96650980 @tempfile=#<Tempfile:/var/folders/2y/wsqnytjj1ld50h7g0ccdc4dh0000gn/T/RackMultipart20200813-28728-w3iswf.mov>, @original_filename="2.mov", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"2.mov\"\r\nContent-Type: application/octet-stream\r\n">}
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/file" for 127.0.0.1 at 2020-08-13 13:10:53 +0800
+Started POST "/users/file" for 127.0.0.1 at 2020-08-13 13:10:53 +0800
+Processing by UsersController#file as */*
+Processing by UsersController#file as */*
+  Parameters: {"file"=>#<ActionDispatch::Http::UploadedFile:0x00007ffa955028e0 @tempfile=#<Tempfile:/var/folders/2y/wsqnytjj1ld50h7g0ccdc4dh0000gn/T/RackMultipart20200813-28728-114stuj.mov>, @original_filename="2.mov", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"2.mov\"\r\nContent-Type: application/octet-stream\r\n">}
+  Parameters: {"file"=>#<ActionDispatch::Http::UploadedFile:0x00007ffa96622e18 @tempfile=#<Tempfile:/var/folders/2y/wsqnytjj1ld50h7g0ccdc4dh0000gn/T/RackMultipart20200813-28728-62s9fu.mov>, @original_filename="2.mov", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"2.mov\"\r\nContent-Type: application/octet-stream\r\n">}
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/file" for 127.0.0.1 at 2020-08-13 13:10:53 +0800
+Processing by UsersController#file as */*
+  Parameters: {"file"=>#<ActionDispatch::Http::UploadedFile:0x00007ffa9486c900 @tempfile=#<Tempfile:/var/folders/2y/wsqnytjj1ld50h7g0ccdc4dh0000gn/T/RackMultipart20200813-28728-45s6vo.mov>, @original_filename="2.mov", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"2.mov\"\r\nContent-Type: application/octet-stream\r\n">}
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/file" for 127.0.0.1 at 2020-08-13 13:10:53 +0800
+Processing by UsersController#file as */*
+  Parameters: {"file"=>#<ActionDispatch::Http::UploadedFile:0x00007ffa954dbb28 @tempfile=#<Tempfile:/var/folders/2y/wsqnytjj1ld50h7g0ccdc4dh0000gn/T/RackMultipart20200813-28728-125je19.mov>, @original_filename="2.mov", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"2.mov\"\r\nContent-Type: application/octet-stream\r\n">}
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/file" for 127.0.0.1 at 2020-08-13 13:10:53 +0800
+Processing by UsersController#file as */*
+  Parameters: {"file"=>#<ActionDispatch::Http::UploadedFile:0x00007ffa93d75358 @tempfile=#<Tempfile:/var/folders/2y/wsqnytjj1ld50h7g0ccdc4dh0000gn/T/RackMultipart20200813-28728-1wnxp5p.mov>, @original_filename="2.mov", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"2.mov\"\r\nContent-Type: application/octet-stream\r\n">}
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/file" for 127.0.0.1 at 2020-08-13 13:10:53 +0800
+Processing by UsersController#file as */*
+  Parameters: {"file"=>#<ActionDispatch::Http::UploadedFile:0x00007ffa965f8500 @tempfile=#<Tempfile:/var/folders/2y/wsqnytjj1ld50h7g0ccdc4dh0000gn/T/RackMultipart20200813-28728-g1bkc3.mov>, @original_filename="2.mov", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"2.mov\"\r\nContent-Type: application/octet-stream\r\n">}
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/file" for 127.0.0.1 at 2020-08-13 13:10:53 +0800
+Processing by UsersController#file as */*
+  Parameters: {"file"=>#<ActionDispatch::Http::UploadedFile:0x00007ffa96680680 @tempfile=#<Tempfile:/var/folders/2y/wsqnytjj1ld50h7g0ccdc4dh0000gn/T/RackMultipart20200813-28728-ithmga.mov>, @original_filename="2.mov", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"2.mov\"\r\nContent-Type: application/octet-stream\r\n">}
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/file" for 127.0.0.1 at 2020-08-13 13:10:53 +0800
+Started POST "/users/file" for 127.0.0.1 at 2020-08-13 13:10:53 +0800
+Processing by UsersController#file as */*
+Processing by UsersController#file as */*
+  Parameters: {"file"=>#<ActionDispatch::Http::UploadedFile:0x00007ffa96f4aea0 @tempfile=#<Tempfile:/var/folders/2y/wsqnytjj1ld50h7g0ccdc4dh0000gn/T/RackMultipart20200813-28728-3ayx76.mov>, @original_filename="2.mov", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"2.mov\"\r\nContent-Type: application/octet-stream\r\n">}
+  Parameters: {"file"=>#<ActionDispatch::Http::UploadedFile:0x00007ffa96f48100 @tempfile=#<Tempfile:/var/folders/2y/wsqnytjj1ld50h7g0ccdc4dh0000gn/T/RackMultipart20200813-28728-1obvlow.mov>, @original_filename="2.mov", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"2.mov\"\r\nContent-Type: application/octet-stream\r\n">}
+Completed 200 OK in 0ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Completed 200 OK in 0ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/file" for 127.0.0.1 at 2020-08-13 13:16:28 +0800
+Processing by UsersController#file as */*
+  Parameters: {"file"=>#<ActionDispatch::Http::UploadedFile:0x00007ffa966694d0 @tempfile=#<Tempfile:/var/folders/2y/wsqnytjj1ld50h7g0ccdc4dh0000gn/T/RackMultipart20200813-28728-15r7rym.mov>, @original_filename="2.mov", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"2.mov\"\r\nContent-Type: application/octet-stream\r\n">}
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/file" for 127.0.0.1 at 2020-08-13 13:16:28 +0800
+Processing by UsersController#file as */*
+  Parameters: {"file"=>#<ActionDispatch::Http::UploadedFile:0x00007ffa96f1b088 @tempfile=#<Tempfile:/var/folders/2y/wsqnytjj1ld50h7g0ccdc4dh0000gn/T/RackMultipart20200813-28728-umb5qo.mov>, @original_filename="2.mov", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"2.mov\"\r\nContent-Type: application/octet-stream\r\n">}
+Completed 200 OK in 1ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/file" for 127.0.0.1 at 2020-08-13 13:16:28 +0800
+Processing by UsersController#file as */*
+  Parameters: {"file"=>#<ActionDispatch::Http::UploadedFile:0x00007ffa96650de0 @tempfile=#<Tempfile:/var/folders/2y/wsqnytjj1ld50h7g0ccdc4dh0000gn/T/RackMultipart20200813-28728-2mu11x.mov>, @original_filename="2.mov", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"2.mov\"\r\nContent-Type: application/octet-stream\r\n">}
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/file" for 127.0.0.1 at 2020-08-13 13:16:28 +0800
+Processing by UsersController#file as */*
+  Parameters: {"file"=>#<ActionDispatch::Http::UploadedFile:0x00007ffa96632c50 @tempfile=#<Tempfile:/var/folders/2y/wsqnytjj1ld50h7g0ccdc4dh0000gn/T/RackMultipart20200813-28728-1p1zz7u.mov>, @original_filename="2.mov", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"2.mov\"\r\nContent-Type: application/octet-stream\r\n">}
+Completed 200 OK in 0ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/file" for 127.0.0.1 at 2020-08-13 13:16:28 +0800
+Processing by UsersController#file as */*
+  Parameters: {"file"=>#<ActionDispatch::Http::UploadedFile:0x00007ffa95501e40 @tempfile=#<Tempfile:/var/folders/2y/wsqnytjj1ld50h7g0ccdc4dh0000gn/T/RackMultipart20200813-28728-1awa0sm.mov>, @original_filename="2.mov", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"2.mov\"\r\nContent-Type: application/octet-stream\r\n">}
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/file" for 127.0.0.1 at 2020-08-13 13:16:28 +0800
+Processing by UsersController#file as */*
+  Parameters: {"file"=>#<ActionDispatch::Http::UploadedFile:0x00007ffa93d7db48 @tempfile=#<Tempfile:/var/folders/2y/wsqnytjj1ld50h7g0ccdc4dh0000gn/T/RackMultipart20200813-28728-1q2jvqu.mov>, @original_filename="2.mov", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"2.mov\"\r\nContent-Type: application/octet-stream\r\n">}
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/file" for 127.0.0.1 at 2020-08-13 13:21:20 +0800
+Processing by UsersController#file as */*
+  Parameters: {"file"=>#<ActionDispatch::Http::UploadedFile:0x00007ffa96ee80c0 @tempfile=#<Tempfile:/var/folders/2y/wsqnytjj1ld50h7g0ccdc4dh0000gn/T/RackMultipart20200813-28728-pvd0db.mov>, @original_filename="2.mov", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"2.mov\"\r\nContent-Type: application/octet-stream\r\n">}
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/file" for 127.0.0.1 at 2020-08-13 13:21:20 +0800
+Processing by UsersController#file as */*
+  Parameters: {"file"=>#<ActionDispatch::Http::UploadedFile:0x00007ffa93d5fb98 @tempfile=#<Tempfile:/var/folders/2y/wsqnytjj1ld50h7g0ccdc4dh0000gn/T/RackMultipart20200813-28728-n624bb.mov>, @original_filename="2.mov", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"2.mov\"\r\nContent-Type: application/octet-stream\r\n">}
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/file" for 127.0.0.1 at 2020-08-13 13:21:20 +0800
+Processing by UsersController#file as */*
+  Parameters: {"file"=>#<ActionDispatch::Http::UploadedFile:0x00007ffa954ba568 @tempfile=#<Tempfile:/var/folders/2y/wsqnytjj1ld50h7g0ccdc4dh0000gn/T/RackMultipart20200813-28728-1gq9fs5.mov>, @original_filename="2.mov", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"2.mov\"\r\nContent-Type: application/octet-stream\r\n">}
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/file" for 127.0.0.1 at 2020-08-13 13:21:20 +0800
+Processing by UsersController#file as */*
+  Parameters: {"file"=>#<ActionDispatch::Http::UploadedFile:0x00007ffa93d4e640 @tempfile=#<Tempfile:/var/folders/2y/wsqnytjj1ld50h7g0ccdc4dh0000gn/T/RackMultipart20200813-28728-k56084.mov>, @original_filename="2.mov", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"2.mov\"\r\nContent-Type: application/octet-stream\r\n">}
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/file" for 127.0.0.1 at 2020-08-13 13:21:20 +0800
+Processing by UsersController#file as */*
+  Parameters: {"file"=>#<ActionDispatch::Http::UploadedFile:0x00007ffa96ec9bc0 @tempfile=#<Tempfile:/var/folders/2y/wsqnytjj1ld50h7g0ccdc4dh0000gn/T/RackMultipart20200813-28728-zzzvvd.mov>, @original_filename="2.mov", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"2.mov\"\r\nContent-Type: application/octet-stream\r\n">}
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/file" for 127.0.0.1 at 2020-08-13 13:21:20 +0800
+Processing by UsersController#file as */*
+  Parameters: {"file"=>#<ActionDispatch::Http::UploadedFile:0x00007ffa980508f8 @tempfile=#<Tempfile:/var/folders/2y/wsqnytjj1ld50h7g0ccdc4dh0000gn/T/RackMultipart20200813-28728-11xh90.mov>, @original_filename="2.mov", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"2.mov\"\r\nContent-Type: application/octet-stream\r\n">}
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/file" for 127.0.0.1 at 2020-08-13 13:21:20 +0800
+Processing by UsersController#file as */*
+  Parameters: {"file"=>#<ActionDispatch::Http::UploadedFile:0x00007ffa96e92530 @tempfile=#<Tempfile:/var/folders/2y/wsqnytjj1ld50h7g0ccdc4dh0000gn/T/RackMultipart20200813-28728-1c6a8h5.mov>, @original_filename="2.mov", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"2.mov\"\r\nContent-Type: application/octet-stream\r\n">}
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/file" for 127.0.0.1 at 2020-08-13 13:21:20 +0800
+Processing by UsersController#file as */*
+  Parameters: {"file"=>#<ActionDispatch::Http::UploadedFile:0x00007ffa9552fb38 @tempfile=#<Tempfile:/var/folders/2y/wsqnytjj1ld50h7g0ccdc4dh0000gn/T/RackMultipart20200813-28728-xa0gyi.mov>, @original_filename="2.mov", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"2.mov\"\r\nContent-Type: application/octet-stream\r\n">}
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/file" for 127.0.0.1 at 2020-08-13 13:21:20 +0800
+Processing by UsersController#file as */*
+  Parameters: {"file"=>#<ActionDispatch::Http::UploadedFile:0x00007ffa96f50a58 @tempfile=#<Tempfile:/var/folders/2y/wsqnytjj1ld50h7g0ccdc4dh0000gn/T/RackMultipart20200813-28728-pndnvg.mov>, @original_filename="2.mov", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"2.mov\"\r\nContent-Type: application/octet-stream\r\n">}
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/file" for 127.0.0.1 at 2020-08-13 13:21:21 +0800
+Processing by UsersController#file as */*
+  Parameters: {"file"=>#<ActionDispatch::Http::UploadedFile:0x00007ffa96f42d40 @tempfile=#<Tempfile:/var/folders/2y/wsqnytjj1ld50h7g0ccdc4dh0000gn/T/RackMultipart20200813-28728-1k7vwuu.mov>, @original_filename="2.mov", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"2.mov\"\r\nContent-Type: application/octet-stream\r\n">}
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/file" for 127.0.0.1 at 2020-08-13 13:21:21 +0800
+Processing by UsersController#file as */*
+  Parameters: {"file"=>#<ActionDispatch::Http::UploadedFile:0x00007ffa93d9dc68 @tempfile=#<Tempfile:/var/folders/2y/wsqnytjj1ld50h7g0ccdc4dh0000gn/T/RackMultipart20200813-28728-135snkb.mov>, @original_filename="2.mov", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"2.mov\"\r\nContent-Type: application/octet-stream\r\n">}
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/file" for 127.0.0.1 at 2020-08-13 13:21:21 +0800
+Processing by UsersController#file as */*
+  Parameters: {"file"=>#<ActionDispatch::Http::UploadedFile:0x00007ffa95509488 @tempfile=#<Tempfile:/var/folders/2y/wsqnytjj1ld50h7g0ccdc4dh0000gn/T/RackMultipart20200813-28728-18d3m4k.mov>, @original_filename="2.mov", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"2.mov\"\r\nContent-Type: application/octet-stream\r\n">}
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/file" for 127.0.0.1 at 2020-08-13 13:21:21 +0800
+Processing by UsersController#file as */*
+  Parameters: {"file"=>#<ActionDispatch::Http::UploadedFile:0x00007ffa96660e48 @tempfile=#<Tempfile:/var/folders/2y/wsqnytjj1ld50h7g0ccdc4dh0000gn/T/RackMultipart20200813-28728-nxi21h.mov>, @original_filename="2.mov", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"2.mov\"\r\nContent-Type: application/octet-stream\r\n">}
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/file" for 127.0.0.1 at 2020-08-13 13:21:21 +0800
+Processing by UsersController#file as */*
+  Parameters: {"file"=>#<ActionDispatch::Http::UploadedFile:0x00007ffa9584f7f0 @tempfile=#<Tempfile:/var/folders/2y/wsqnytjj1ld50h7g0ccdc4dh0000gn/T/RackMultipart20200813-28728-xfwdkw.mov>, @original_filename="2.mov", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"2.mov\"\r\nContent-Type: application/octet-stream\r\n">}
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/file" for 127.0.0.1 at 2020-08-13 13:21:21 +0800
+Processing by UsersController#file as */*
+  Parameters: {"file"=>#<ActionDispatch::Http::UploadedFile:0x00007ffa9662bec8 @tempfile=#<Tempfile:/var/folders/2y/wsqnytjj1ld50h7g0ccdc4dh0000gn/T/RackMultipart20200813-28728-1t9coop.mov>, @original_filename="2.mov", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"2.mov\"\r\nContent-Type: application/octet-stream\r\n">}
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/file" for 127.0.0.1 at 2020-08-13 13:21:21 +0800
+Processing by UsersController#file as */*
+  Parameters: {"file"=>#<ActionDispatch::Http::UploadedFile:0x00007ffa954e9a70 @tempfile=#<Tempfile:/var/folders/2y/wsqnytjj1ld50h7g0ccdc4dh0000gn/T/RackMultipart20200813-28728-1dw6fk2.mov>, @original_filename="2.mov", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"2.mov\"\r\nContent-Type: application/octet-stream\r\n">}
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/file" for 127.0.0.1 at 2020-08-13 13:21:21 +0800
+Processing by UsersController#file as */*
+  Parameters: {"file"=>#<ActionDispatch::Http::UploadedFile:0x00007ffa96ef9f78 @tempfile=#<Tempfile:/var/folders/2y/wsqnytjj1ld50h7g0ccdc4dh0000gn/T/RackMultipart20200813-28728-17o1bw1.mov>, @original_filename="2.mov", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"2.mov\"\r\nContent-Type: application/octet-stream\r\n">}
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/file" for 127.0.0.1 at 2020-08-13 13:21:21 +0800
+Processing by UsersController#file as */*
+  Parameters: {"file"=>#<ActionDispatch::Http::UploadedFile:0x00007ffa93d77568 @tempfile=#<Tempfile:/var/folders/2y/wsqnytjj1ld50h7g0ccdc4dh0000gn/T/RackMultipart20200813-28728-n1i9fr.mov>, @original_filename="2.mov", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"2.mov\"\r\nContent-Type: application/octet-stream\r\n">}
+Completed 200 OK in 1ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/file" for 127.0.0.1 at 2020-08-13 13:21:21 +0800
+Processing by UsersController#file as */*
+  Parameters: {"file"=>#<ActionDispatch::Http::UploadedFile:0x00007ffa965f86e0 @tempfile=#<Tempfile:/var/folders/2y/wsqnytjj1ld50h7g0ccdc4dh0000gn/T/RackMultipart20200813-28728-1h6mpk6.mov>, @original_filename="2.mov", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"2.mov\"\r\nContent-Type: application/octet-stream\r\n">}
+Completed 200 OK in 0ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/file" for 127.0.0.1 at 2020-08-13 13:21:21 +0800
+Processing by UsersController#file as */*
+  Parameters: {"file"=>#<ActionDispatch::Http::UploadedFile:0x00007ffa954ca0a8 @tempfile=#<Tempfile:/var/folders/2y/wsqnytjj1ld50h7g0ccdc4dh0000gn/T/RackMultipart20200813-28728-1wcjwho.mov>, @original_filename="2.mov", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"2.mov\"\r\nContent-Type: application/octet-stream\r\n">}
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/file" for 127.0.0.1 at 2020-08-13 13:21:21 +0800
+Processing by UsersController#file as */*
+  Parameters: {"file"=>#<ActionDispatch::Http::UploadedFile:0x00007ffa965ea2c0 @tempfile=#<Tempfile:/var/folders/2y/wsqnytjj1ld50h7g0ccdc4dh0000gn/T/RackMultipart20200813-28728-1vkxrdn.mov>, @original_filename="2.mov", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"2.mov\"\r\nContent-Type: application/octet-stream\r\n">}
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/file" for 127.0.0.1 at 2020-08-13 13:21:21 +0800
+Processing by UsersController#file as */*
+  Parameters: {"file"=>#<ActionDispatch::Http::UploadedFile:0x00007ffa93d2e7a0 @tempfile=#<Tempfile:/var/folders/2y/wsqnytjj1ld50h7g0ccdc4dh0000gn/T/RackMultipart20200813-28728-jso6sr.mov>, @original_filename="2.mov", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"2.mov\"\r\nContent-Type: application/octet-stream\r\n">}
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/file" for 127.0.0.1 at 2020-08-13 13:21:21 +0800
+Processing by UsersController#file as */*
+  Parameters: {"file"=>#<ActionDispatch::Http::UploadedFile:0x00007ffa965d3bd8 @tempfile=#<Tempfile:/var/folders/2y/wsqnytjj1ld50h7g0ccdc4dh0000gn/T/RackMultipart20200813-28728-11qrwtx.mov>, @original_filename="2.mov", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"2.mov\"\r\nContent-Type: application/octet-stream\r\n">}
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/file" for 127.0.0.1 at 2020-08-13 13:21:21 +0800
+Processing by UsersController#file as */*
+  Parameters: {"file"=>#<ActionDispatch::Http::UploadedFile:0x00007ffa965b9300 @tempfile=#<Tempfile:/var/folders/2y/wsqnytjj1ld50h7g0ccdc4dh0000gn/T/RackMultipart20200813-28728-1c356st.mov>, @original_filename="2.mov", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"2.mov\"\r\nContent-Type: application/octet-stream\r\n">}
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/file" for 127.0.0.1 at 2020-08-13 13:21:21 +0800
+Processing by UsersController#file as */*
+  Parameters: {"file"=>#<ActionDispatch::Http::UploadedFile:0x00007ffa965b1b28 @tempfile=#<Tempfile:/var/folders/2y/wsqnytjj1ld50h7g0ccdc4dh0000gn/T/RackMultipart20200813-28728-1e46qp0.mov>, @original_filename="2.mov", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"2.mov\"\r\nContent-Type: application/octet-stream\r\n">}
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/file" for 127.0.0.1 at 2020-08-13 13:21:21 +0800
+Processing by UsersController#file as */*
+  Parameters: {"file"=>#<ActionDispatch::Http::UploadedFile:0x00007ffa95498f80 @tempfile=#<Tempfile:/var/folders/2y/wsqnytjj1ld50h7g0ccdc4dh0000gn/T/RackMultipart20200813-28728-q8x43l.mov>, @original_filename="2.mov", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"2.mov\"\r\nContent-Type: application/octet-stream\r\n">}
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/file" for 127.0.0.1 at 2020-08-13 13:21:21 +0800
+Processing by UsersController#file as */*
+  Parameters: {"file"=>#<ActionDispatch::Http::UploadedFile:0x00007ffa9658ae10 @tempfile=#<Tempfile:/var/folders/2y/wsqnytjj1ld50h7g0ccdc4dh0000gn/T/RackMultipart20200813-28728-15ymbmd.mov>, @original_filename="2.mov", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"2.mov\"\r\nContent-Type: application/octet-stream\r\n">}
+Completed 200 OK in 0ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/file" for 127.0.0.1 at 2020-08-13 13:21:21 +0800
+Processing by UsersController#file as */*
+  Parameters: {"file"=>#<ActionDispatch::Http::UploadedFile:0x00007ffa9546b210 @tempfile=#<Tempfile:/var/folders/2y/wsqnytjj1ld50h7g0ccdc4dh0000gn/T/RackMultipart20200813-28728-hdzpcb.mov>, @original_filename="2.mov", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"2.mov\"\r\nContent-Type: application/octet-stream\r\n">}
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/file" for 127.0.0.1 at 2020-08-13 13:21:21 +0800
+Processing by UsersController#file as */*
+  Parameters: {"file"=>#<ActionDispatch::Http::UploadedFile:0x00007ffa9706d378 @tempfile=#<Tempfile:/var/folders/2y/wsqnytjj1ld50h7g0ccdc4dh0000gn/T/RackMultipart20200813-28728-8bfihh.mov>, @original_filename="2.mov", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"2.mov\"\r\nContent-Type: application/octet-stream\r\n">}
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/file" for 127.0.0.1 at 2020-08-13 13:21:21 +0800
+Processing by UsersController#file as */*
+  Parameters: {"file"=>#<ActionDispatch::Http::UploadedFile:0x00007ffa95452080 @tempfile=#<Tempfile:/var/folders/2y/wsqnytjj1ld50h7g0ccdc4dh0000gn/T/RackMultipart20200813-28728-3f9rbe.mov>, @original_filename="2.mov", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"2.mov\"\r\nContent-Type: application/octet-stream\r\n">}
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/file" for 127.0.0.1 at 2020-08-13 13:21:26 +0800
+Processing by UsersController#file as */*
+  Parameters: {"file"=>#<ActionDispatch::Http::UploadedFile:0x00007ffa96f639a0 @tempfile=#<Tempfile:/var/folders/2y/wsqnytjj1ld50h7g0ccdc4dh0000gn/T/RackMultipart20200813-28728-13wsca3.mov>, @original_filename="2.mov", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"2.mov\"\r\nContent-Type: application/octet-stream\r\n">}
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/file" for 127.0.0.1 at 2020-08-13 13:21:26 +0800
+Processing by UsersController#file as */*
+  Parameters: {"file"=>#<ActionDispatch::Http::UploadedFile:0x00007ffa93db6510 @tempfile=#<Tempfile:/var/folders/2y/wsqnytjj1ld50h7g0ccdc4dh0000gn/T/RackMultipart20200813-28728-1bog1s5.mov>, @original_filename="2.mov", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"2.mov\"\r\nContent-Type: application/octet-stream\r\n">}
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/file" for 127.0.0.1 at 2020-08-13 13:21:26 +0800
+Processing by UsersController#file as */*
+  Parameters: {"file"=>#<ActionDispatch::Http::UploadedFile:0x00007ffa96f29598 @tempfile=#<Tempfile:/var/folders/2y/wsqnytjj1ld50h7g0ccdc4dh0000gn/T/RackMultipart20200813-28728-wbycef.mov>, @original_filename="2.mov", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"2.mov\"\r\nContent-Type: application/octet-stream\r\n">}
+Completed 200 OK in 0ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/file" for 127.0.0.1 at 2020-08-13 13:21:26 +0800
+Processing by UsersController#file as */*
+  Parameters: {"file"=>#<ActionDispatch::Http::UploadedFile:0x00007ffa9663b828 @tempfile=#<Tempfile:/var/folders/2y/wsqnytjj1ld50h7g0ccdc4dh0000gn/T/RackMultipart20200813-28728-q9rc6f.mov>, @original_filename="2.mov", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"2.mov\"\r\nContent-Type: application/octet-stream\r\n">}
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/file" for 127.0.0.1 at 2020-08-13 13:21:26 +0800
+Processing by UsersController#file as */*
+  Parameters: {"file"=>#<ActionDispatch::Http::UploadedFile:0x00007ffa9486cd60 @tempfile=#<Tempfile:/var/folders/2y/wsqnytjj1ld50h7g0ccdc4dh0000gn/T/RackMultipart20200813-28728-tmj6a6.mov>, @original_filename="2.mov", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"2.mov\"\r\nContent-Type: application/octet-stream\r\n">}
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/file" for 127.0.0.1 at 2020-08-13 13:21:26 +0800
+Processing by UsersController#file as */*
+  Parameters: {"file"=>#<ActionDispatch::Http::UploadedFile:0x00007ffa9660a9a8 @tempfile=#<Tempfile:/var/folders/2y/wsqnytjj1ld50h7g0ccdc4dh0000gn/T/RackMultipart20200813-28728-x81j5z.mov>, @original_filename="2.mov", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"2.mov\"\r\nContent-Type: application/octet-stream\r\n">}
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/file" for 127.0.0.1 at 2020-08-13 13:21:26 +0800
+Processing by UsersController#file as */*
+  Parameters: {"file"=>#<ActionDispatch::Http::UploadedFile:0x00007ffa954b89e8 @tempfile=#<Tempfile:/var/folders/2y/wsqnytjj1ld50h7g0ccdc4dh0000gn/T/RackMultipart20200813-28728-1q4n5wh.mov>, @original_filename="2.mov", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"2.mov\"\r\nContent-Type: application/octet-stream\r\n">}
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/file" for 127.0.0.1 at 2020-08-13 13:21:26 +0800
+Processing by UsersController#file as */*
+  Parameters: {"file"=>#<ActionDispatch::Http::UploadedFile:0x00007ffa96ec1fb0 @tempfile=#<Tempfile:/var/folders/2y/wsqnytjj1ld50h7g0ccdc4dh0000gn/T/RackMultipart20200813-28728-1ui3kj7.mov>, @original_filename="2.mov", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"2.mov\"\r\nContent-Type: application/octet-stream\r\n">}
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/file" for 127.0.0.1 at 2020-08-13 13:21:26 +0800
+Processing by UsersController#file as */*
+  Parameters: {"file"=>#<ActionDispatch::Http::UploadedFile:0x00007ffa965b8770 @tempfile=#<Tempfile:/var/folders/2y/wsqnytjj1ld50h7g0ccdc4dh0000gn/T/RackMultipart20200813-28728-1tol8xx.mov>, @original_filename="2.mov", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"2.mov\"\r\nContent-Type: application/octet-stream\r\n">}
+Completed 200 OK in 0ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/file" for 127.0.0.1 at 2020-08-13 13:21:26 +0800
+Processing by UsersController#file as */*
+  Parameters: {"file"=>#<ActionDispatch::Http::UploadedFile:0x00007ffa96e5b620 @tempfile=#<Tempfile:/var/folders/2y/wsqnytjj1ld50h7g0ccdc4dh0000gn/T/RackMultipart20200813-28728-e09v5c.mov>, @original_filename="2.mov", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"2.mov\"\r\nContent-Type: application/octet-stream\r\n">}
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/file" for 127.0.0.1 at 2020-08-13 13:21:26 +0800
+Processing by UsersController#file as */*
+  Parameters: {"file"=>#<ActionDispatch::Http::UploadedFile:0x00007ffa95471278 @tempfile=#<Tempfile:/var/folders/2y/wsqnytjj1ld50h7g0ccdc4dh0000gn/T/RackMultipart20200813-28728-1ejpvt0.mov>, @original_filename="2.mov", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"2.mov\"\r\nContent-Type: application/octet-stream\r\n">}
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/file" for 127.0.0.1 at 2020-08-13 13:21:26 +0800
+Processing by UsersController#file as */*
+  Parameters: {"file"=>#<ActionDispatch::Http::UploadedFile:0x00007ffa9544a088 @tempfile=#<Tempfile:/var/folders/2y/wsqnytjj1ld50h7g0ccdc4dh0000gn/T/RackMultipart20200813-28728-9d56bu.mov>, @original_filename="2.mov", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"2.mov\"\r\nContent-Type: application/octet-stream\r\n">}
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/file" for 127.0.0.1 at 2020-08-13 13:21:26 +0800
+Processing by UsersController#file as */*
+  Parameters: {"file"=>#<ActionDispatch::Http::UploadedFile:0x00007ffa96e3b370 @tempfile=#<Tempfile:/var/folders/2y/wsqnytjj1ld50h7g0ccdc4dh0000gn/T/RackMultipart20200813-28728-1u9xuis.mov>, @original_filename="2.mov", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"2.mov\"\r\nContent-Type: application/octet-stream\r\n">}
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/file" for 127.0.0.1 at 2020-08-13 13:21:26 +0800
+Processing by UsersController#file as */*
+  Parameters: {"file"=>#<ActionDispatch::Http::UploadedFile:0x00007ffa96e10288 @tempfile=#<Tempfile:/var/folders/2y/wsqnytjj1ld50h7g0ccdc4dh0000gn/T/RackMultipart20200813-28728-d61fq0.mov>, @original_filename="2.mov", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"2.mov\"\r\nContent-Type: application/octet-stream\r\n">}
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/file" for 127.0.0.1 at 2020-08-13 13:21:26 +0800
+Processing by UsersController#file as */*
+  Parameters: {"file"=>#<ActionDispatch::Http::UploadedFile:0x00007ffa954095d8 @tempfile=#<Tempfile:/var/folders/2y/wsqnytjj1ld50h7g0ccdc4dh0000gn/T/RackMultipart20200813-28728-12g8jfj.mov>, @original_filename="2.mov", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"2.mov\"\r\nContent-Type: application/octet-stream\r\n">}
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/file" for 127.0.0.1 at 2020-08-13 13:21:27 +0800
+Processing by UsersController#file as */*
+  Parameters: {"file"=>#<ActionDispatch::Http::UploadedFile:0x00007ffa93cc0548 @tempfile=#<Tempfile:/var/folders/2y/wsqnytjj1ld50h7g0ccdc4dh0000gn/T/RackMultipart20200813-28728-wzkr0f.mov>, @original_filename="2.mov", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"2.mov\"\r\nContent-Type: application/octet-stream\r\n">}
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/file" for 127.0.0.1 at 2020-08-13 13:21:27 +0800
+Processing by UsersController#file as */*
+  Parameters: {"file"=>#<ActionDispatch::Http::UploadedFile:0x00007ffa9652a178 @tempfile=#<Tempfile:/var/folders/2y/wsqnytjj1ld50h7g0ccdc4dh0000gn/T/RackMultipart20200813-28728-f3zm64.mov>, @original_filename="2.mov", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"2.mov\"\r\nContent-Type: application/octet-stream\r\n">}
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/file" for 127.0.0.1 at 2020-08-13 13:21:27 +0800
+Processing by UsersController#file as */*
+  Parameters: {"file"=>#<ActionDispatch::Http::UploadedFile:0x00007ffa96d710e8 @tempfile=#<Tempfile:/var/folders/2y/wsqnytjj1ld50h7g0ccdc4dh0000gn/T/RackMultipart20200813-28728-yi4m1q.mov>, @original_filename="2.mov", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"2.mov\"\r\nContent-Type: application/octet-stream\r\n">}
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/file" for 127.0.0.1 at 2020-08-13 13:21:27 +0800
+Processing by UsersController#file as */*
+  Parameters: {"file"=>#<ActionDispatch::Http::UploadedFile:0x00007ffa968ecc70 @tempfile=#<Tempfile:/var/folders/2y/wsqnytjj1ld50h7g0ccdc4dh0000gn/T/RackMultipart20200813-28728-cyn3y9.mov>, @original_filename="2.mov", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"2.mov\"\r\nContent-Type: application/octet-stream\r\n">}
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/file" for 127.0.0.1 at 2020-08-13 13:21:27 +0800
+Processing by UsersController#file as */*
+  Parameters: {"file"=>#<ActionDispatch::Http::UploadedFile:0x00007ffa93a8d050 @tempfile=#<Tempfile:/var/folders/2y/wsqnytjj1ld50h7g0ccdc4dh0000gn/T/RackMultipart20200813-28728-1o8cz2v.mov>, @original_filename="2.mov", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"2.mov\"\r\nContent-Type: application/octet-stream\r\n">}
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/file" for 127.0.0.1 at 2020-08-13 13:21:27 +0800
+Processing by UsersController#file as */*
+  Parameters: {"file"=>#<ActionDispatch::Http::UploadedFile:0x00007ffa96b80ea0 @tempfile=#<Tempfile:/var/folders/2y/wsqnytjj1ld50h7g0ccdc4dh0000gn/T/RackMultipart20200813-28728-16s4uqt.mov>, @original_filename="2.mov", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"2.mov\"\r\nContent-Type: application/octet-stream\r\n">}
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/file" for 127.0.0.1 at 2020-08-13 13:21:27 +0800
+Processing by UsersController#file as */*
+  Parameters: {"file"=>#<ActionDispatch::Http::UploadedFile:0x00007ffa96bf2500 @tempfile=#<Tempfile:/var/folders/2y/wsqnytjj1ld50h7g0ccdc4dh0000gn/T/RackMultipart20200813-28728-1wzbx2o.mov>, @original_filename="2.mov", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"2.mov\"\r\nContent-Type: application/octet-stream\r\n">}
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/file" for 127.0.0.1 at 2020-08-13 13:21:27 +0800
+Processing by UsersController#file as */*
+  Parameters: {"file"=>#<ActionDispatch::Http::UploadedFile:0x00007ffa93b18268 @tempfile=#<Tempfile:/var/folders/2y/wsqnytjj1ld50h7g0ccdc4dh0000gn/T/RackMultipart20200813-28728-fqabl0.mov>, @original_filename="2.mov", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"2.mov\"\r\nContent-Type: application/octet-stream\r\n">}
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/file" for 127.0.0.1 at 2020-08-13 13:21:27 +0800
+Processing by UsersController#file as */*
+  Parameters: {"file"=>#<ActionDispatch::Http::UploadedFile:0x00007ffa96c83398 @tempfile=#<Tempfile:/var/folders/2y/wsqnytjj1ld50h7g0ccdc4dh0000gn/T/RackMultipart20200813-28728-4zlt95.mov>, @original_filename="2.mov", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"2.mov\"\r\nContent-Type: application/octet-stream\r\n">}
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/file" for 127.0.0.1 at 2020-08-13 13:21:27 +0800
+Processing by UsersController#file as */*
+  Parameters: {"file"=>#<ActionDispatch::Http::UploadedFile:0x00007ffa93b89d28 @tempfile=#<Tempfile:/var/folders/2y/wsqnytjj1ld50h7g0ccdc4dh0000gn/T/RackMultipart20200813-28728-1lc2m1r.mov>, @original_filename="2.mov", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"2.mov\"\r\nContent-Type: application/octet-stream\r\n">}
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/file" for 127.0.0.1 at 2020-08-13 13:21:27 +0800
+Processing by UsersController#file as */*
+  Parameters: {"file"=>#<ActionDispatch::Http::UploadedFile:0x00007ffa96f72978 @tempfile=#<Tempfile:/var/folders/2y/wsqnytjj1ld50h7g0ccdc4dh0000gn/T/RackMultipart20200813-28728-lfl8g0.mov>, @original_filename="2.mov", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"2.mov\"\r\nContent-Type: application/octet-stream\r\n">}
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/file" for 127.0.0.1 at 2020-08-13 13:21:27 +0800
+Processing by UsersController#file as */*
+  Parameters: {"file"=>#<ActionDispatch::Http::UploadedFile:0x00007ffa93dc51a0 @tempfile=#<Tempfile:/var/folders/2y/wsqnytjj1ld50h7g0ccdc4dh0000gn/T/RackMultipart20200813-28728-1n52x3n.mov>, @original_filename="2.mov", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"2.mov\"\r\nContent-Type: application/octet-stream\r\n">}
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/file" for 127.0.0.1 at 2020-08-13 13:21:27 +0800
+Processing by UsersController#file as */*
+  Parameters: {"file"=>#<ActionDispatch::Http::UploadedFile:0x00007ffa953d7b78 @tempfile=#<Tempfile:/var/folders/2y/wsqnytjj1ld50h7g0ccdc4dh0000gn/T/RackMultipart20200813-28728-1w0of17.mov>, @original_filename="2.mov", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"2.mov\"\r\nContent-Type: application/octet-stream\r\n">}
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/file" for 127.0.0.1 at 2020-08-13 13:21:27 +0800
+Processing by UsersController#file as */*
+  Parameters: {"file"=>#<ActionDispatch::Http::UploadedFile:0x00007ffa93d9c570 @tempfile=#<Tempfile:/var/folders/2y/wsqnytjj1ld50h7g0ccdc4dh0000gn/T/RackMultipart20200813-28728-1bjo14k.mov>, @original_filename="2.mov", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"2.mov\"\r\nContent-Type: application/octet-stream\r\n">}
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/file" for 127.0.0.1 at 2020-08-13 13:21:27 +0800
+Processing by UsersController#file as */*
+  Parameters: {"file"=>#<ActionDispatch::Http::UploadedFile:0x00007ffa95513be0 @tempfile=#<Tempfile:/var/folders/2y/wsqnytjj1ld50h7g0ccdc4dh0000gn/T/RackMultipart20200813-28728-cfbvxq.mov>, @original_filename="2.mov", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"2.mov\"\r\nContent-Type: application/octet-stream\r\n">}
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/file" for 127.0.0.1 at 2020-08-13 13:21:59 +0800
+Processing by UsersController#file as */*
+  Parameters: {"file"=>#<ActionDispatch::Http::UploadedFile:0x00007ffa9666a3d0 @tempfile=#<Tempfile:/var/folders/2y/wsqnytjj1ld50h7g0ccdc4dh0000gn/T/RackMultipart20200813-28728-w5aeo5.mov>, @original_filename="2.mov", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"2.mov\"\r\nContent-Type: application/octet-stream\r\n">}
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/file" for 127.0.0.1 at 2020-08-13 13:22:12 +0800
+Processing by UsersController#file as */*
+  Parameters: {"file"=>#<ActionDispatch::Http::UploadedFile:0x00007ffa96f0bd40 @tempfile=#<Tempfile:/var/folders/2y/wsqnytjj1ld50h7g0ccdc4dh0000gn/T/RackMultipart20200813-28728-21okfz.mov>, @original_filename="2.mov", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"2.mov\"\r\nContent-Type: application/octet-stream\r\n">}
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/file" for 127.0.0.1 at 2020-08-13 13:22:16 +0800
+Processing by UsersController#file as */*
+  Parameters: {"file"=>#<ActionDispatch::Http::UploadedFile:0x00007ffa9552c050 @tempfile=#<Tempfile:/var/folders/2y/wsqnytjj1ld50h7g0ccdc4dh0000gn/T/RackMultipart20200813-28728-q8rfq7.mov>, @original_filename="2.mov", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"2.mov\"\r\nContent-Type: application/octet-stream\r\n">}
+Completed 200 OK in 1ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/file" for 127.0.0.1 at 2020-08-13 13:22:16 +0800
+Processing by UsersController#file as */*
+  Parameters: {"file"=>#<ActionDispatch::Http::UploadedFile:0x00007ffa96f517c8 @tempfile=#<Tempfile:/var/folders/2y/wsqnytjj1ld50h7g0ccdc4dh0000gn/T/RackMultipart20200813-28728-14dxs28.mov>, @original_filename="2.mov", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"2.mov\"\r\nContent-Type: application/octet-stream\r\n">}
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/file" for 127.0.0.1 at 2020-08-13 13:22:18 +0800
+Processing by UsersController#file as */*
+  Parameters: {"file"=>#<ActionDispatch::Http::UploadedFile:0x00007ffa953da0a8 @tempfile=#<Tempfile:/var/folders/2y/wsqnytjj1ld50h7g0ccdc4dh0000gn/T/RackMultipart20200813-28728-16hkrj9.mov>, @original_filename="2.mov", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"2.mov\"\r\nContent-Type: application/octet-stream\r\n">}
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/file" for 127.0.0.1 at 2020-08-13 13:23:53 +0800
+Processing by UsersController#file as */*
+  Parameters: {"file"=>#<ActionDispatch::Http::UploadedFile:0x00007ffa93d95c98 @tempfile=#<Tempfile:/var/folders/2y/wsqnytjj1ld50h7g0ccdc4dh0000gn/T/RackMultipart20200813-28728-yopr8i.mov>, @original_filename="2.mov", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"2.mov\"\r\nContent-Type: application/octet-stream\r\n">}
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/file" for 127.0.0.1 at 2020-08-13 13:25:34 +0800
+Processing by UsersController#file as */*
+  Parameters: {"file"=>#<ActionDispatch::Http::UploadedFile:0x00007ffa96f29ed0 @tempfile=#<Tempfile:/var/folders/2y/wsqnytjj1ld50h7g0ccdc4dh0000gn/T/RackMultipart20200813-28728-1vkjz0l.mov>, @original_filename="2.mov", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"2.mov\"\r\nContent-Type: application/octet-stream\r\n">}
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/file" for 127.0.0.1 at 2020-08-13 13:25:36 +0800
+Processing by UsersController#file as */*
+  Parameters: {"file"=>#<ActionDispatch::Http::UploadedFile:0x00007ffa96658d38 @tempfile=#<Tempfile:/var/folders/2y/wsqnytjj1ld50h7g0ccdc4dh0000gn/T/RackMultipart20200813-28728-9s7j6h.mov>, @original_filename="2.mov", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"2.mov\"\r\nContent-Type: application/octet-stream\r\n">}
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/file" for 127.0.0.1 at 2020-08-13 13:25:36 +0800
+Processing by UsersController#file as */*
+  Parameters: {"file"=>#<ActionDispatch::Http::UploadedFile:0x00007ffa96642d58 @tempfile=#<Tempfile:/var/folders/2y/wsqnytjj1ld50h7g0ccdc4dh0000gn/T/RackMultipart20200813-28728-9gana2.mov>, @original_filename="2.mov", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"2.mov\"\r\nContent-Type: application/octet-stream\r\n">}
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/file" for 127.0.0.1 at 2020-08-13 13:25:36 +0800
+Processing by UsersController#file as */*
+  Parameters: {"file"=>#<ActionDispatch::Http::UploadedFile:0x00007ffa95503ee8 @tempfile=#<Tempfile:/var/folders/2y/wsqnytjj1ld50h7g0ccdc4dh0000gn/T/RackMultipart20200813-28728-xfpire.mov>, @original_filename="2.mov", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"2.mov\"\r\nContent-Type: application/octet-stream\r\n">}
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/file" for 127.0.0.1 at 2020-08-13 13:25:36 +0800
+Processing by UsersController#file as */*
+  Parameters: {"file"=>#<ActionDispatch::Http::UploadedFile:0x00007ffa97074830 @tempfile=#<Tempfile:/var/folders/2y/wsqnytjj1ld50h7g0ccdc4dh0000gn/T/RackMultipart20200813-28728-1ajkpmo.mov>, @original_filename="2.mov", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"2.mov\"\r\nContent-Type: application/octet-stream\r\n">}
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/file" for 127.0.0.1 at 2020-08-13 13:25:36 +0800
+Processing by UsersController#file as */*
+  Parameters: {"file"=>#<ActionDispatch::Http::UploadedFile:0x00007ffa954e0ee8 @tempfile=#<Tempfile:/var/folders/2y/wsqnytjj1ld50h7g0ccdc4dh0000gn/T/RackMultipart20200813-28728-38mwbd.mov>, @original_filename="2.mov", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"2.mov\"\r\nContent-Type: application/octet-stream\r\n">}
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/file" for 127.0.0.1 at 2020-08-13 13:25:36 +0800
+Processing by UsersController#file as */*
+  Parameters: {"file"=>#<ActionDispatch::Http::UploadedFile:0x00007ffa954d3bf8 @tempfile=#<Tempfile:/var/folders/2y/wsqnytjj1ld50h7g0ccdc4dh0000gn/T/RackMultipart20200813-28728-194ugk2.mov>, @original_filename="2.mov", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"2.mov\"\r\nContent-Type: application/octet-stream\r\n">}
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/file" for 127.0.0.1 at 2020-08-13 13:25:36 +0800
+Processing by UsersController#file as */*
+  Parameters: {"file"=>#<ActionDispatch::Http::UploadedFile:0x00007ffa93d65e80 @tempfile=#<Tempfile:/var/folders/2y/wsqnytjj1ld50h7g0ccdc4dh0000gn/T/RackMultipart20200813-28728-djhnqq.mov>, @original_filename="2.mov", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"2.mov\"\r\nContent-Type: application/octet-stream\r\n">}
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/file" for 127.0.0.1 at 2020-08-13 13:25:36 +0800
+Processing by UsersController#file as */*
+  Parameters: {"file"=>#<ActionDispatch::Http::UploadedFile:0x00007ffa96682bb0 @tempfile=#<Tempfile:/var/folders/2y/wsqnytjj1ld50h7g0ccdc4dh0000gn/T/RackMultipart20200813-28728-1r29ut2.mov>, @original_filename="2.mov", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"2.mov\"\r\nContent-Type: application/octet-stream\r\n">}
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/file" for 127.0.0.1 at 2020-08-13 13:25:36 +0800
+Processing by UsersController#file as */*
+  Parameters: {"file"=>#<ActionDispatch::Http::UploadedFile:0x00007ffa93dc7a40 @tempfile=#<Tempfile:/var/folders/2y/wsqnytjj1ld50h7g0ccdc4dh0000gn/T/RackMultipart20200813-28728-cowkn1.mov>, @original_filename="2.mov", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"2.mov\"\r\nContent-Type: application/octet-stream\r\n">}
+Completed 200 OK in 0ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/file" for 127.0.0.1 at 2020-08-13 13:25:36 +0800
+Processing by UsersController#file as */*
+  Parameters: {"file"=>#<ActionDispatch::Http::UploadedFile:0x00007ffa96f428e0 @tempfile=#<Tempfile:/var/folders/2y/wsqnytjj1ld50h7g0ccdc4dh0000gn/T/RackMultipart20200813-28728-1kruann.mov>, @original_filename="2.mov", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"2.mov\"\r\nContent-Type: application/octet-stream\r\n">}
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/file" for 127.0.0.1 at 2020-08-13 13:25:36 +0800
+Processing by UsersController#file as */*
+  Parameters: {"file"=>#<ActionDispatch::Http::UploadedFile:0x00007ffa93d9f360 @tempfile=#<Tempfile:/var/folders/2y/wsqnytjj1ld50h7g0ccdc4dh0000gn/T/RackMultipart20200813-28728-1s6a5ox.mov>, @original_filename="2.mov", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"2.mov\"\r\nContent-Type: application/octet-stream\r\n">}
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/file" for 127.0.0.1 at 2020-08-13 13:25:36 +0800
+Processing by UsersController#file as */*
+  Parameters: {"file"=>#<ActionDispatch::Http::UploadedFile:0x00007ffa9550bc60 @tempfile=#<Tempfile:/var/folders/2y/wsqnytjj1ld50h7g0ccdc4dh0000gn/T/RackMultipart20200813-28728-u4rwz0.mov>, @original_filename="2.mov", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"2.mov\"\r\nContent-Type: application/octet-stream\r\n">}
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/file" for 127.0.0.1 at 2020-08-13 13:25:36 +0800
+Processing by UsersController#file as */*
+  Parameters: {"file"=>#<ActionDispatch::Http::UploadedFile:0x00007ffa966633a0 @tempfile=#<Tempfile:/var/folders/2y/wsqnytjj1ld50h7g0ccdc4dh0000gn/T/RackMultipart20200813-28728-1gx6m8c.mov>, @original_filename="2.mov", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"2.mov\"\r\nContent-Type: application/octet-stream\r\n">}
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/file" for 127.0.0.1 at 2020-08-13 13:25:36 +0800
+Processing by UsersController#file as */*
+  Parameters: {"file"=>#<ActionDispatch::Http::UploadedFile:0x00007ffa96f09018 @tempfile=#<Tempfile:/var/folders/2y/wsqnytjj1ld50h7g0ccdc4dh0000gn/T/RackMultipart20200813-28728-1lwoj91.mov>, @original_filename="2.mov", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"2.mov\"\r\nContent-Type: application/octet-stream\r\n">}
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/file" for 127.0.0.1 at 2020-08-13 13:25:36 +0800
+Processing by UsersController#file as */*
+  Parameters: {"file"=>#<ActionDispatch::Http::UploadedFile:0x00007ffa96631918 @tempfile=#<Tempfile:/var/folders/2y/wsqnytjj1ld50h7g0ccdc4dh0000gn/T/RackMultipart20200813-28728-d4aeuq.mov>, @original_filename="2.mov", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"2.mov\"\r\nContent-Type: application/octet-stream\r\n">}
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/file" for 127.0.0.1 at 2020-08-13 13:25:36 +0800
+Processing by UsersController#file as */*
+  Parameters: {"file"=>#<ActionDispatch::Http::UploadedFile:0x00007ffa954eba78 @tempfile=#<Tempfile:/var/folders/2y/wsqnytjj1ld50h7g0ccdc4dh0000gn/T/RackMultipart20200813-28728-3w6o7v.mov>, @original_filename="2.mov", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"2.mov\"\r\nContent-Type: application/octet-stream\r\n">}
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/file" for 127.0.0.1 at 2020-08-13 13:25:36 +0800
+Processing by UsersController#file as */*
+  Parameters: {"file"=>#<ActionDispatch::Http::UploadedFile:0x00007ffa96f018b8 @tempfile=#<Tempfile:/var/folders/2y/wsqnytjj1ld50h7g0ccdc4dh0000gn/T/RackMultipart20200813-28728-tv08ek.mov>, @original_filename="2.mov", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"2.mov\"\r\nContent-Type: application/octet-stream\r\n">}
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/file" for 127.0.0.1 at 2020-08-13 13:25:36 +0800
+Processing by UsersController#file as */*
+  Parameters: {"file"=>#<ActionDispatch::Http::UploadedFile:0x00007ffa96612a40 @tempfile=#<Tempfile:/var/folders/2y/wsqnytjj1ld50h7g0ccdc4dh0000gn/T/RackMultipart20200813-28728-13187we.mov>, @original_filename="2.mov", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"2.mov\"\r\nContent-Type: application/octet-stream\r\n">}
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/file" for 127.0.0.1 at 2020-08-13 13:25:36 +0800
+Processing by UsersController#file as */*
+  Parameters: {"file"=>#<ActionDispatch::Http::UploadedFile:0x00007ffa965fb1b0 @tempfile=#<Tempfile:/var/folders/2y/wsqnytjj1ld50h7g0ccdc4dh0000gn/T/RackMultipart20200813-28728-obyh45.mov>, @original_filename="2.mov", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"2.mov\"\r\nContent-Type: application/octet-stream\r\n">}
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/file" for 127.0.0.1 at 2020-08-13 13:25:37 +0800
+Processing by UsersController#file as */*
+  Parameters: {"file"=>#<ActionDispatch::Http::UploadedFile:0x00007ffa954cb110 @tempfile=#<Tempfile:/var/folders/2y/wsqnytjj1ld50h7g0ccdc4dh0000gn/T/RackMultipart20200813-28728-15kuw6p.mov>, @original_filename="2.mov", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"2.mov\"\r\nContent-Type: application/octet-stream\r\n">}
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/file" for 127.0.0.1 at 2020-08-13 13:25:37 +0800
+Processing by UsersController#file as */*
+  Parameters: {"file"=>#<ActionDispatch::Http::UploadedFile:0x00007ffa965eb490 @tempfile=#<Tempfile:/var/folders/2y/wsqnytjj1ld50h7g0ccdc4dh0000gn/T/RackMultipart20200813-28728-f6agr1.mov>, @original_filename="2.mov", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"2.mov\"\r\nContent-Type: application/octet-stream\r\n">}
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/file" for 127.0.0.1 at 2020-08-13 13:25:37 +0800
+Processing by UsersController#file as */*
+  Parameters: {"file"=>#<ActionDispatch::Http::UploadedFile:0x00007ffa93d2fc40 @tempfile=#<Tempfile:/var/folders/2y/wsqnytjj1ld50h7g0ccdc4dh0000gn/T/RackMultipart20200813-28728-9rxbg2.mov>, @original_filename="2.mov", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"2.mov\"\r\nContent-Type: application/octet-stream\r\n">}
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/file" for 127.0.0.1 at 2020-08-13 13:25:37 +0800
+Processing by UsersController#file as */*
+  Parameters: {"file"=>#<ActionDispatch::Http::UploadedFile:0x00007ffa965d1900 @tempfile=#<Tempfile:/var/folders/2y/wsqnytjj1ld50h7g0ccdc4dh0000gn/T/RackMultipart20200813-28728-5ct0u3.mov>, @original_filename="2.mov", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"2.mov\"\r\nContent-Type: application/octet-stream\r\n">}
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/file" for 127.0.0.1 at 2020-08-13 13:25:37 +0800
+Processing by UsersController#file as */*
+  Parameters: {"file"=>#<ActionDispatch::Http::UploadedFile:0x00007ffa96ea06a8 @tempfile=#<Tempfile:/var/folders/2y/wsqnytjj1ld50h7g0ccdc4dh0000gn/T/RackMultipart20200813-28728-h9q1mu.mov>, @original_filename="2.mov", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"2.mov\"\r\nContent-Type: application/octet-stream\r\n">}
+Completed 200 OK in 0ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/file" for 127.0.0.1 at 2020-08-13 13:25:37 +0800
+Processing by UsersController#file as */*
+  Parameters: {"file"=>#<ActionDispatch::Http::UploadedFile:0x00007ffa96e79008 @tempfile=#<Tempfile:/var/folders/2y/wsqnytjj1ld50h7g0ccdc4dh0000gn/T/RackMultipart20200813-28728-1rz0ppv.mov>, @original_filename="2.mov", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"2.mov\"\r\nContent-Type: application/octet-stream\r\n">}
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/file" for 127.0.0.1 at 2020-08-13 13:25:37 +0800
+Processing by UsersController#file as */*
+  Parameters: {"file"=>#<ActionDispatch::Http::UploadedFile:0x00007ffa96e6af08 @tempfile=#<Tempfile:/var/folders/2y/wsqnytjj1ld50h7g0ccdc4dh0000gn/T/RackMultipart20200813-28728-qhrzq.mov>, @original_filename="2.mov", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"2.mov\"\r\nContent-Type: application/octet-stream\r\n">}
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/file" for 127.0.0.1 at 2020-08-13 13:25:37 +0800
+Processing by UsersController#file as */*
+  Parameters: {"file"=>#<ActionDispatch::Http::UploadedFile:0x00007ffa96f72ab8 @tempfile=#<Tempfile:/var/folders/2y/wsqnytjj1ld50h7g0ccdc4dh0000gn/T/RackMultipart20200813-28728-1wtz8u2.mov>, @original_filename="2.mov", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"2.mov\"\r\nContent-Type: application/octet-stream\r\n">}
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/file" for 127.0.0.1 at 2020-08-13 13:25:37 +0800
+Processing by UsersController#file as */*
+  Parameters: {"file"=>#<ActionDispatch::Http::UploadedFile:0x00007ffa93dc4638 @tempfile=#<Tempfile:/var/folders/2y/wsqnytjj1ld50h7g0ccdc4dh0000gn/T/RackMultipart20200813-28728-1m5pst5.mov>, @original_filename="2.mov", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"2.mov\"\r\nContent-Type: application/octet-stream\r\n">}
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/file" for 127.0.0.1 at 2020-08-13 13:25:37 +0800
+Processing by UsersController#file as */*
+  Parameters: {"file"=>#<ActionDispatch::Http::UploadedFile:0x00007ffa953db700 @tempfile=#<Tempfile:/var/folders/2y/wsqnytjj1ld50h7g0ccdc4dh0000gn/T/RackMultipart20200813-28728-h375n5.mov>, @original_filename="2.mov", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"2.mov\"\r\nContent-Type: application/octet-stream\r\n">}
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/file" for 127.0.0.1 at 2020-08-13 13:27:06 +0800
+Processing by UsersController#file as */*
+  Parameters: {"file"=>#<ActionDispatch::Http::UploadedFile:0x00007ffa93da4248 @tempfile=#<Tempfile:/var/folders/2y/wsqnytjj1ld50h7g0ccdc4dh0000gn/T/RackMultipart20200813-28728-7br0p.mov>, @original_filename="2.mov", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"2.mov\"\r\nContent-Type: application/octet-stream\r\n">}
+Completed 200 OK in 0ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/file" for 127.0.0.1 at 2020-08-13 13:27:29 +0800
+Processing by UsersController#file as */*
+  Parameters: {"file"=>#<ActionDispatch::Http::UploadedFile:0x00007ffa9550bb98 @tempfile=#<Tempfile:/var/folders/2y/wsqnytjj1ld50h7g0ccdc4dh0000gn/T/RackMultipart20200813-28728-1qul64k.mov>, @original_filename="2.mov", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"2.mov\"\r\nContent-Type: application/octet-stream\r\n">}
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/file" for 127.0.0.1 at 2020-08-13 13:27:40 +0800
+Processing by UsersController#file as */*
+  Parameters: {"file"=>#<ActionDispatch::Http::UploadedFile:0x00007ffa96662748 @tempfile=#<Tempfile:/var/folders/2y/wsqnytjj1ld50h7g0ccdc4dh0000gn/T/RackMultipart20200813-28728-e15tkj.mov>, @original_filename="2.mov", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"2.mov\"\r\nContent-Type: application/octet-stream\r\n">}
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/file" for 127.0.0.1 at 2020-08-13 13:27:44 +0800
+Processing by UsersController#file as */*
+  Parameters: {"file"=>#<ActionDispatch::Http::UploadedFile:0x00007ffa96f08e38 @tempfile=#<Tempfile:/var/folders/2y/wsqnytjj1ld50h7g0ccdc4dh0000gn/T/RackMultipart20200813-28728-a84f92.mov>, @original_filename="2.mov", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"2.mov\"\r\nContent-Type: application/octet-stream\r\n">}
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/file" for 127.0.0.1 at 2020-08-13 13:27:44 +0800
+Processing by UsersController#file as */*
+  Parameters: {"file"=>#<ActionDispatch::Http::UploadedFile:0x00007ffa96631738 @tempfile=#<Tempfile:/var/folders/2y/wsqnytjj1ld50h7g0ccdc4dh0000gn/T/RackMultipart20200813-28728-1qek6at.mov>, @original_filename="2.mov", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"2.mov\"\r\nContent-Type: application/octet-stream\r\n">}
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/file" for 127.0.0.1 at 2020-08-13 13:27:44 +0800
+Processing by UsersController#file as */*
+  Parameters: {"file"=>#<ActionDispatch::Http::UploadedFile:0x00007ffa954eb460 @tempfile=#<Tempfile:/var/folders/2y/wsqnytjj1ld50h7g0ccdc4dh0000gn/T/RackMultipart20200813-28728-1mevxc5.mov>, @original_filename="2.mov", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"2.mov\"\r\nContent-Type: application/octet-stream\r\n">}
+Completed 200 OK in 0ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/file" for 127.0.0.1 at 2020-08-13 13:27:44 +0800
+Processing by UsersController#file as */*
+  Parameters: {"file"=>#<ActionDispatch::Http::UploadedFile:0x00007ffa96f01638 @tempfile=#<Tempfile:/var/folders/2y/wsqnytjj1ld50h7g0ccdc4dh0000gn/T/RackMultipart20200813-28728-1k3avqv.mov>, @original_filename="2.mov", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"2.mov\"\r\nContent-Type: application/octet-stream\r\n">}
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/file" for 127.0.0.1 at 2020-08-13 13:27:44 +0800
+Processing by UsersController#file as */*
+  Parameters: {"file"=>#<ActionDispatch::Http::UploadedFile:0x00007ffa96612e28 @tempfile=#<Tempfile:/var/folders/2y/wsqnytjj1ld50h7g0ccdc4dh0000gn/T/RackMultipart20200813-28728-csqken.mov>, @original_filename="2.mov", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"2.mov\"\r\nContent-Type: application/octet-stream\r\n">}
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/file" for 127.0.0.1 at 2020-08-13 13:27:44 +0800
+Processing by UsersController#file as */*
+  Parameters: {"file"=>#<ActionDispatch::Http::UploadedFile:0x00007ffa96600f48 @tempfile=#<Tempfile:/var/folders/2y/wsqnytjj1ld50h7g0ccdc4dh0000gn/T/RackMultipart20200813-28728-1tdh6w2.mov>, @original_filename="2.mov", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"2.mov\"\r\nContent-Type: application/octet-stream\r\n">}
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/file" for 127.0.0.1 at 2020-08-13 13:27:44 +0800
+Processing by UsersController#file as */*
+  Parameters: {"file"=>#<ActionDispatch::Http::UploadedFile:0x00007ffa93d566d8 @tempfile=#<Tempfile:/var/folders/2y/wsqnytjj1ld50h7g0ccdc4dh0000gn/T/RackMultipart20200813-28728-rcrt0l.mov>, @original_filename="2.mov", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"2.mov\"\r\nContent-Type: application/octet-stream\r\n">}
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/file" for 127.0.0.1 at 2020-08-13 13:27:44 +0800
+Processing by UsersController#file as */*
+  Parameters: {"file"=>#<ActionDispatch::Http::UploadedFile:0x00007ffa9548e328 @tempfile=#<Tempfile:/var/folders/2y/wsqnytjj1ld50h7g0ccdc4dh0000gn/T/RackMultipart20200813-28728-1nbklkw.mov>, @original_filename="2.mov", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"2.mov\"\r\nContent-Type: application/octet-stream\r\n">}
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/file" for 127.0.0.1 at 2020-08-13 13:27:44 +0800
+Processing by UsersController#file as */*
+  Parameters: {"file"=>#<ActionDispatch::Http::UploadedFile:0x00007ffa93d34290 @tempfile=#<Tempfile:/var/folders/2y/wsqnytjj1ld50h7g0ccdc4dh0000gn/T/RackMultipart20200813-28728-1t613kd.mov>, @original_filename="2.mov", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"2.mov\"\r\nContent-Type: application/octet-stream\r\n">}
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/file" for 127.0.0.1 at 2020-08-13 13:27:44 +0800
+Processing by UsersController#file as */*
+  Parameters: {"file"=>#<ActionDispatch::Http::UploadedFile:0x00007ffa965d8b38 @tempfile=#<Tempfile:/var/folders/2y/wsqnytjj1ld50h7g0ccdc4dh0000gn/T/RackMultipart20200813-28728-1f5whce.mov>, @original_filename="2.mov", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"2.mov\"\r\nContent-Type: application/octet-stream\r\n">}
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/file" for 127.0.0.1 at 2020-08-13 13:27:44 +0800
+Processing by UsersController#file as */*
+  Parameters: {"file"=>#<ActionDispatch::Http::UploadedFile:0x00007ffa96ea3fb0 @tempfile=#<Tempfile:/var/folders/2y/wsqnytjj1ld50h7g0ccdc4dh0000gn/T/RackMultipart20200813-28728-u3xcsh.mov>, @original_filename="2.mov", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"2.mov\"\r\nContent-Type: application/octet-stream\r\n">}
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/file" for 127.0.0.1 at 2020-08-13 13:27:44 +0800
+Processing by UsersController#file as */*
+  Parameters: {"file"=>#<ActionDispatch::Http::UploadedFile:0x00007ffa96e7b6a0 @tempfile=#<Tempfile:/var/folders/2y/wsqnytjj1ld50h7g0ccdc4dh0000gn/T/RackMultipart20200813-28728-1sbj0xq.mov>, @original_filename="2.mov", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"2.mov\"\r\nContent-Type: application/octet-stream\r\n">}
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/file" for 127.0.0.1 at 2020-08-13 13:27:44 +0800
+Processing by UsersController#file as */*
+  Parameters: {"file"=>#<ActionDispatch::Http::UploadedFile:0x00007ffa96e6b728 @tempfile=#<Tempfile:/var/folders/2y/wsqnytjj1ld50h7g0ccdc4dh0000gn/T/RackMultipart20200813-28728-8qn6y8.mov>, @original_filename="2.mov", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"2.mov\"\r\nContent-Type: application/octet-stream\r\n">}
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/file" for 127.0.0.1 at 2020-08-13 13:27:44 +0800
+Processing by UsersController#file as */*
+  Parameters: {"file"=>#<ActionDispatch::Http::UploadedFile:0x00007ffa96590248 @tempfile=#<Tempfile:/var/folders/2y/wsqnytjj1ld50h7g0ccdc4dh0000gn/T/RackMultipart20200813-28728-1qlcff0.mov>, @original_filename="2.mov", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"2.mov\"\r\nContent-Type: application/octet-stream\r\n">}
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/file" for 127.0.0.1 at 2020-08-13 13:27:44 +0800
+Processing by UsersController#file as */*
+  Parameters: {"file"=>#<ActionDispatch::Http::UploadedFile:0x00007ffa9547a030 @tempfile=#<Tempfile:/var/folders/2y/wsqnytjj1ld50h7g0ccdc4dh0000gn/T/RackMultipart20200813-28728-19a47k9.mov>, @original_filename="2.mov", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"2.mov\"\r\nContent-Type: application/octet-stream\r\n">}
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/file" for 127.0.0.1 at 2020-08-13 13:27:44 +0800
+Processing by UsersController#file as */*
+  Parameters: {"file"=>#<ActionDispatch::Http::UploadedFile:0x00007ffa96e62560 @tempfile=#<Tempfile:/var/folders/2y/wsqnytjj1ld50h7g0ccdc4dh0000gn/T/RackMultipart20200813-28728-1c6yr3y.mov>, @original_filename="2.mov", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"2.mov\"\r\nContent-Type: application/octet-stream\r\n">}
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/file" for 127.0.0.1 at 2020-08-13 13:27:44 +0800
+Processing by UsersController#file as */*
+  Parameters: {"file"=>#<ActionDispatch::Http::UploadedFile:0x00007ffa96e52930 @tempfile=#<Tempfile:/var/folders/2y/wsqnytjj1ld50h7g0ccdc4dh0000gn/T/RackMultipart20200813-28728-1q517h6.mov>, @original_filename="2.mov", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"2.mov\"\r\nContent-Type: application/octet-stream\r\n">}
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/file" for 127.0.0.1 at 2020-08-13 13:27:44 +0800
+Processing by UsersController#file as */*
+  Parameters: {"file"=>#<ActionDispatch::Http::UploadedFile:0x00007ffa96e48318 @tempfile=#<Tempfile:/var/folders/2y/wsqnytjj1ld50h7g0ccdc4dh0000gn/T/RackMultipart20200813-28728-rmrk2e.mov>, @original_filename="2.mov", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"2.mov\"\r\nContent-Type: application/octet-stream\r\n">}
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/file" for 127.0.0.1 at 2020-08-13 13:27:44 +0800
+Processing by UsersController#file as */*
+  Parameters: {"file"=>#<ActionDispatch::Http::UploadedFile:0x00007ffa96559860 @tempfile=#<Tempfile:/var/folders/2y/wsqnytjj1ld50h7g0ccdc4dh0000gn/T/RackMultipart20200813-28728-13dyyfb.mov>, @original_filename="2.mov", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"2.mov\"\r\nContent-Type: application/octet-stream\r\n">}
+Completed 200 OK in 0ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/file" for 127.0.0.1 at 2020-08-13 13:27:44 +0800
+Processing by UsersController#file as */*
+  Parameters: {"file"=>#<ActionDispatch::Http::UploadedFile:0x00007ffa96f62c30 @tempfile=#<Tempfile:/var/folders/2y/wsqnytjj1ld50h7g0ccdc4dh0000gn/T/RackMultipart20200813-28728-1psjyph.mov>, @original_filename="2.mov", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"2.mov\"\r\nContent-Type: application/octet-stream\r\n">}
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/file" for 127.0.0.1 at 2020-08-13 13:27:44 +0800
+Processing by UsersController#file as */*
+  Parameters: {"file"=>#<ActionDispatch::Http::UploadedFile:0x00007ffa93db72d0 @tempfile=#<Tempfile:/var/folders/2y/wsqnytjj1ld50h7g0ccdc4dh0000gn/T/RackMultipart20200813-28728-17gzrgg.mov>, @original_filename="2.mov", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"2.mov\"\r\nContent-Type: application/octet-stream\r\n">}
+Completed 200 OK in 0ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/file" for 127.0.0.1 at 2020-08-13 13:27:44 +0800
+Processing by UsersController#file as */*
+  Parameters: {"file"=>#<ActionDispatch::Http::UploadedFile:0x00007ffa96f2a998 @tempfile=#<Tempfile:/var/folders/2y/wsqnytjj1ld50h7g0ccdc4dh0000gn/T/RackMultipart20200813-28728-2exe3q.mov>, @original_filename="2.mov", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"2.mov\"\r\nContent-Type: application/octet-stream\r\n">}
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/file" for 127.0.0.1 at 2020-08-13 13:27:44 +0800
+Processing by UsersController#file as */*
+  Parameters: {"file"=>#<ActionDispatch::Http::UploadedFile:0x00007ffa96649180 @tempfile=#<Tempfile:/var/folders/2y/wsqnytjj1ld50h7g0ccdc4dh0000gn/T/RackMultipart20200813-28728-pqt99r.mov>, @original_filename="2.mov", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"2.mov\"\r\nContent-Type: application/octet-stream\r\n">}
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/file" for 127.0.0.1 at 2020-08-13 13:27:44 +0800
+Processing by UsersController#file as */*
+  Parameters: {"file"=>#<ActionDispatch::Http::UploadedFile:0x00007ffa9486fc40 @tempfile=#<Tempfile:/var/folders/2y/wsqnytjj1ld50h7g0ccdc4dh0000gn/T/RackMultipart20200813-28728-1bdhfu.mov>, @original_filename="2.mov", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"2.mov\"\r\nContent-Type: application/octet-stream\r\n">}
+Completed 200 OK in 0ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/file" for 127.0.0.1 at 2020-08-13 13:27:44 +0800
+Processing by UsersController#file as */*
+  Parameters: {"file"=>#<ActionDispatch::Http::UploadedFile:0x00007ffa96ee8ea8 @tempfile=#<Tempfile:/var/folders/2y/wsqnytjj1ld50h7g0ccdc4dh0000gn/T/RackMultipart20200813-28728-1ply5fd.mov>, @original_filename="2.mov", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"2.mov\"\r\nContent-Type: application/octet-stream\r\n">}
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/file" for 127.0.0.1 at 2020-08-13 13:27:44 +0800
+Processing by UsersController#file as */*
+  Parameters: {"file"=>#<ActionDispatch::Http::UploadedFile:0x00007ffa954baef0 @tempfile=#<Tempfile:/var/folders/2y/wsqnytjj1ld50h7g0ccdc4dh0000gn/T/RackMultipart20200813-28728-j1s6uk.mov>, @original_filename="2.mov", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"2.mov\"\r\nContent-Type: application/octet-stream\r\n">}
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/file" for 127.0.0.1 at 2020-08-13 13:27:44 +0800
+Processing by UsersController#file as */*
+  Parameters: {"file"=>#<ActionDispatch::Http::UploadedFile:0x00007ffa93d37148 @tempfile=#<Tempfile:/var/folders/2y/wsqnytjj1ld50h7g0ccdc4dh0000gn/T/RackMultipart20200813-28728-1q7zlac.mov>, @original_filename="2.mov", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"2.mov\"\r\nContent-Type: application/octet-stream\r\n">}
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/file" for ::1 at 2020-08-13 13:29:36 +0800
+Processing by UsersController#file as */*
+  Parameters: {"file"=>#<ActionDispatch::Http::UploadedFile:0x00007ffa9657bb18 @tempfile=#<Tempfile:/var/folders/2y/wsqnytjj1ld50h7g0ccdc4dh0000gn/T/RackMultipart20200813-28728-10p12ko.mov>, @original_filename="2.mov", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"2.mov\"\r\nContent-Type: application/octet-stream\r\n">}
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/file" for 127.0.0.1 at 2020-08-13 13:30:03 +0800
+Processing by UsersController#file as */*
+  Parameters: {"file"=>#<ActionDispatch::Http::UploadedFile:0x00007ffa961179f0 @tempfile=#<Tempfile:/var/folders/2y/wsqnytjj1ld50h7g0ccdc4dh0000gn/T/RackMultipart20200813-28728-7e972n.mov>, @original_filename="2.mov", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"2.mov\"\r\nContent-Type: application/octet-stream\r\n">}
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/file" for 127.0.0.1 at 2020-08-13 13:30:03 +0800
+Processing by UsersController#file as */*
+  Parameters: {"file"=>#<ActionDispatch::Http::UploadedFile:0x00007ffa9552ef80 @tempfile=#<Tempfile:/var/folders/2y/wsqnytjj1ld50h7g0ccdc4dh0000gn/T/RackMultipart20200813-28728-1tvv0c0.mov>, @original_filename="2.mov", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"2.mov\"\r\nContent-Type: application/octet-stream\r\n">}
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/file" for 127.0.0.1 at 2020-08-13 13:30:03 +0800
+Processing by UsersController#file as */*
+  Parameters: {"file"=>#<ActionDispatch::Http::UploadedFile:0x00007ffa96683d08 @tempfile=#<Tempfile:/var/folders/2y/wsqnytjj1ld50h7g0ccdc4dh0000gn/T/RackMultipart20200813-28728-1e88z37.mov>, @original_filename="2.mov", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"2.mov\"\r\nContent-Type: application/octet-stream\r\n">}
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/file" for ::1 at 2020-08-13 13:31:48 +0800
+Processing by UsersController#file as */*
+  Parameters: {"file"=>#<ActionDispatch::Http::UploadedFile:0x00007ffa95526420 @tempfile=#<Tempfile:/var/folders/2y/wsqnytjj1ld50h7g0ccdc4dh0000gn/T/RackMultipart20200813-28728-1r81vnv.mov>, @original_filename="2.mov", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"2.mov\"\r\nContent-Type: application/octet-stream\r\n">}
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/file" for ::1 at 2020-08-13 13:31:48 +0800
+Processing by UsersController#file as */*
+  Parameters: {"file"=>#<ActionDispatch::Http::UploadedFile:0x00007ffa96f6a638 @tempfile=#<Tempfile:/var/folders/2y/wsqnytjj1ld50h7g0ccdc4dh0000gn/T/RackMultipart20200813-28728-ixra32.mov>, @original_filename="2.mov", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"2.mov\"\r\nContent-Type: application/octet-stream\r\n">}
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/file" for ::1 at 2020-08-13 13:31:48 +0800
+Processing by UsersController#file as */*
+  Parameters: {"file"=>#<ActionDispatch::Http::UploadedFile:0x00007ffa95527c30 @tempfile=#<Tempfile:/var/folders/2y/wsqnytjj1ld50h7g0ccdc4dh0000gn/T/RackMultipart20200813-28728-11volls.mov>, @original_filename="2.mov", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"2.mov\"\r\nContent-Type: application/octet-stream\r\n">}
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/file" for ::1 at 2020-08-13 14:15:34 +0800
+  [1m[35m (0.4ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ /usr/local/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+Processing by UsersController#file as */*
+  Parameters: {"file"=>#<ActionDispatch::Http::UploadedFile:0x00007ffa96f72090 @tempfile=#<Tempfile:/var/folders/2y/wsqnytjj1ld50h7g0ccdc4dh0000gn/T/RackMultipart20200813-28728-h4qj56.mov>, @original_filename="2.mov", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"2.mov\"\r\nContent-Type: application/octet-stream\r\n">}
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/file" for ::1 at 2020-08-13 14:15:34 +0800
+Processing by UsersController#file as */*
+  Parameters: {"file"=>#<ActionDispatch::Http::UploadedFile:0x00007ffa9551afa8 @tempfile=#<Tempfile:/var/folders/2y/wsqnytjj1ld50h7g0ccdc4dh0000gn/T/RackMultipart20200813-28728-5ogjv2.mov>, @original_filename="2.mov", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"2.mov\"\r\nContent-Type: application/octet-stream\r\n">}
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/file" for ::1 at 2020-08-13 14:15:34 +0800
+Processing by UsersController#file as */*
+  Parameters: {"file"=>#<ActionDispatch::Http::UploadedFile:0x00007ffa966808b0 @tempfile=#<Tempfile:/var/folders/2y/wsqnytjj1ld50h7g0ccdc4dh0000gn/T/RackMultipart20200813-28728-8cyx2f.mov>, @original_filename="2.mov", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"2.mov\"\r\nContent-Type: application/octet-stream\r\n">}
+Completed 200 OK in 1ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/file" for ::1 at 2020-08-14 10:08:35 +0800
+  [1m[35m (6.7ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ /usr/local/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+Processing by UsersController#file as */*
+  Parameters: {"file"=>#<ActionDispatch::Http::UploadedFile:0x00007ffa94846b60 @tempfile=#<Tempfile:/var/folders/2y/wsqnytjj1ld50h7g0ccdc4dh0000gn/T/RackMultipart20200814-28728-s549jl.mov>, @original_filename="2.mov", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"2.mov\"\r\nContent-Type: application/octet-stream\r\n">}
+Completed 200 OK in 2ms (Views: 0.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/file" for ::1 at 2020-08-14 10:09:32 +0800
+Processing by UsersController#file as */*
+  Parameters: {"file"=>#<ActionDispatch::Http::UploadedFile:0x00007ffa9667aff0 @tempfile=#<Tempfile:/var/folders/2y/wsqnytjj1ld50h7g0ccdc4dh0000gn/T/RackMultipart20200814-28728-6qmo4r.mov>, @original_filename="2.mov", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"2.mov\"\r\nContent-Type: application/octet-stream\r\n">}
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/file" for ::1 at 2020-08-14 10:10:15 +0800
+Processing by UsersController#file as */*
+  Parameters: {"file"=>#<ActionDispatch::Http::UploadedFile:0x00007ffa966800b8 @tempfile=#<Tempfile:/var/folders/2y/wsqnytjj1ld50h7g0ccdc4dh0000gn/T/RackMultipart20200814-28728-r5wkho.mov>, @original_filename="2.mov", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"2.mov\"\r\nContent-Type: application/octet-stream\r\n">}
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/file" for ::1 at 2020-08-14 12:24:05 +0800
+  [1m[35m (1.1ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ /usr/local/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+Processing by UsersController#file as */*
+  Parameters: {"file"=>#<ActionDispatch::Http::UploadedFile:0x00007ffa95121438 @tempfile=#<Tempfile:/var/folders/2y/wsqnytjj1ld50h7g0ccdc4dh0000gn/T/RackMultipart20200814-28728-1q2bbkl.mov>, @original_filename="2.mov", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"2.mov\"\r\nContent-Type: application/octet-stream\r\n">}
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/file" for ::1 at 2020-08-14 12:24:30 +0800
+Processing by UsersController#file as */*
+  Parameters: {"file"=>#<ActionDispatch::Http::UploadedFile:0x00007ffa96f73490 @tempfile=#<Tempfile:/var/folders/2y/wsqnytjj1ld50h7g0ccdc4dh0000gn/T/RackMultipart20200814-28728-1jxz2gw.mov>, @original_filename="2.mov", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"2.mov\"\r\nContent-Type: application/octet-stream\r\n">}
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/file" for ::1 at 2020-08-14 12:30:25 +0800
+Processing by UsersController#file as */*
+  Parameters: {"file"=>#<ActionDispatch::Http::UploadedFile:0x00007ffa950bea90 @tempfile=#<Tempfile:/var/folders/2y/wsqnytjj1ld50h7g0ccdc4dh0000gn/T/RackMultipart20200814-28728-ecqfu4.mov>, @original_filename="2.mov", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"2.mov\"\r\nContent-Type: application/octet-stream\r\n">}
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/file" for ::1 at 2020-08-14 12:34:41 +0800
+Processing by UsersController#file as */*
+  Parameters: {"file"=>#<ActionDispatch::Http::UploadedFile:0x00007ffa96f72798 @tempfile=#<Tempfile:/var/folders/2y/wsqnytjj1ld50h7g0ccdc4dh0000gn/T/RackMultipart20200814-28728-1qntn5t.mov>, @original_filename="2.mov", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"2.mov\"\r\nContent-Type: application/octet-stream\r\n">}
+Completed 200 OK in 0ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/file" for ::1 at 2020-08-14 12:34:57 +0800
+Processing by UsersController#file as */*
+  Parameters: {"file"=>#<ActionDispatch::Http::UploadedFile:0x00007ffa950bea90 @tempfile=#<Tempfile:/var/folders/2y/wsqnytjj1ld50h7g0ccdc4dh0000gn/T/RackMultipart20200814-28728-15absb2.mov>, @original_filename="2.mov", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"2.mov\"\r\nContent-Type: application/octet-stream\r\n">}
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/file" for ::1 at 2020-08-14 12:35:18 +0800
+Processing by UsersController#file as */*
+  Parameters: {"file"=>#<ActionDispatch::Http::UploadedFile:0x00007ffa96f72018 @tempfile=#<Tempfile:/var/folders/2y/wsqnytjj1ld50h7g0ccdc4dh0000gn/T/RackMultipart20200814-28728-bhye5v.mov>, @original_filename="2.mov", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"2.mov\"\r\nContent-Type: application/octet-stream\r\n">}
+Completed 200 OK in 0ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/file" for ::1 at 2020-08-14 12:37:06 +0800
+Processing by UsersController#file as */*
+  Parameters: {"file"=>#<ActionDispatch::Http::UploadedFile:0x00007ffa95508a88 @tempfile=#<Tempfile:/var/folders/2y/wsqnytjj1ld50h7g0ccdc4dh0000gn/T/RackMultipart20200814-28728-17whyzv.mov>, @original_filename="2.mov", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"2.mov\"\r\nContent-Type: application/octet-stream\r\n">}
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/file" for ::1 at 2020-08-14 12:37:43 +0800
+Processing by UsersController#file as */*
+  Parameters: {"file"=>#<ActionDispatch::Http::UploadedFile:0x00007ffa96f720e0 @tempfile=#<Tempfile:/var/folders/2y/wsqnytjj1ld50h7g0ccdc4dh0000gn/T/RackMultipart20200814-28728-qtzrto.mov>, @original_filename="2.mov", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"2.mov\"\r\nContent-Type: application/octet-stream\r\n">}
+Completed 200 OK in 0ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/file" for ::1 at 2020-08-14 13:16:09 +0800
+  [1m[35m (0.4ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ /usr/local/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+Processing by UsersController#file as */*
+  Parameters: {"file"=>#<ActionDispatch::Http::UploadedFile:0x00007ffa96f19b70 @tempfile=#<Tempfile:/var/folders/2y/wsqnytjj1ld50h7g0ccdc4dh0000gn/T/RackMultipart20200814-28728-4wqi42.mov>, @original_filename="2.mov", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"2.mov\"\r\nContent-Type: application/octet-stream\r\n">}
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/file" for ::1 at 2020-08-14 13:16:09 +0800
+Processing by UsersController#file as */*
+  Parameters: {"file"=>#<ActionDispatch::Http::UploadedFile:0x00007ffa93a0c4c8 @tempfile=#<Tempfile:/var/folders/2y/wsqnytjj1ld50h7g0ccdc4dh0000gn/T/RackMultipart20200814-28728-gwyr19.mov>, @original_filename="2.mov", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"2.mov\"\r\nContent-Type: application/octet-stream\r\n">}
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/file" for ::1 at 2020-08-14 13:16:09 +0800
+Processing by UsersController#file as */*
+  Parameters: {"file"=>#<ActionDispatch::Http::UploadedFile:0x00007ffa93db5048 @tempfile=#<Tempfile:/var/folders/2y/wsqnytjj1ld50h7g0ccdc4dh0000gn/T/RackMultipart20200814-28728-kl4wvo.mov>, @original_filename="2.mov", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"2.mov\"\r\nContent-Type: application/octet-stream\r\n">}
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+

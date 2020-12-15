@@ -7,6 +7,7 @@ Rails.application.routes.draw do
       post 'login'
       post 'logout'
       post 'auth_session'
+      post 'file'
     end
   end
 end

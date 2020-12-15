@@ -43,13 +43,13 @@ class UsersController < ApplicationController
           user.save
           render json: { status: "success", user: user }
         else
-          render json: { reason: "auth error" }, status: "503"
+          render json: { reason: "auth error" }, status: "403"
         end
       else
-        render json: { reason: "user not found" }, status: "503"
+        render json: { reason: "user not found" }, status: "403"
       end
     else
-      render json: { reason: "auth error" }, status: "503"
+      render json: { reason: "auth error" }, status: "403"
     end
   end
 
@@ -79,4 +79,8 @@ class UsersController < ApplicationController
     end
   end
 
+  def file
+    file = params["file"]
+    render json: { upload: "done" }, status: "200"
+  end
 end
